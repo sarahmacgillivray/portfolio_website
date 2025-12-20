@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #062d16;
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url('images/header.JPG') center/cover no-repeat;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+            background: rgba(5, 83, 27, 0.3);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s backwards;
+            background: rgba(5, 83, 27, 0.3);
+            padding: 0.5rem 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero .cta {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: #0c4121;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .hero .cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #333;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-tag {
+            background: #f0f0f0;
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: #0c4121;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #0c4121 0%, #1e8449 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-links a {
+            color: #0c4121;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-detail {
+            display: none;
+            background: #f9f9f9;
+            padding: 3rem 2rem;
+            margin-top: 2rem;
+            border-radius: 12px;
+        }
+
+        .project-detail.active {
+            display: block;
+        }
+
+        .project-detail h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .project-detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-detail-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .project-tech-stack {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #0c4121;
+        }
+
+        .project-tech-stack h4 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .tech-list {
+            list-style: none;
+        }
+
+        .tech-list li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+
+        .tech-list li:before {
+            content: "✓ ";
+            color: #0c4121;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .contact {
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: #0c4121;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Sarah MacGillivray's Portfolio</h1>
+        <p>Computer Engineering Student | Software Developer</p>
+        <a href="#projects" class="cta">View My Work</a>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div>
+                <p>Looking for a dynamic, committed, high achieving superstar? That's me! I am currently in my fourth year of Computer Engineering at the University 
+                    of British Columbia. Ever since I was little, I loved tinkering and building things, whether that spanned from 
+                    building (add descriptive stuff here) snow forts, (descriptive) Minecraft, and then quickly advancing to creating Arduino and Raspberry Pi projects, I loved creating!
+                    As I've gotten older, I've turned this passion for creation into something more sophisticated, my Computer/Software 
+                    Engineering career. I've been able to contribute 
+                    </p>
+                <p style="margin-top: 1rem;">Currently based in [Your Location], I specialize in [Your Specialization] and have worked with various companies to deliver high-quality software solutions.</p>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 1rem;">Technical Skills</h3>
+                <div class="skills">
+                    <div class="skill-tag">JavaScript</div>
+                    <div class="skill-tag">C++/C</div>
+                    <div class="skill-tag">FreeRTOS Development</div>
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">React</div>
+                    <div class="skill-tag">Robotics</div>
+                    <div class="skill-tag">SQL</div>
+                    <div class="skill-tag">Git</div>
+                    <div class="skill-tag">AWS</div>
+                    <div class="skill-tag">Docker</div>
+                    <div class="skill-tag">Embedded Programming</div>
+                    <div class="skill-tag">Verilog/System Verilog</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects">
+            <div class="project-card" onclick="toggleDetail(0)">
+                <div class="project-img">🚀</div>
+                <div class="project-content">
+                    <h3>Web Application Platform</h3>
+                    <p>A full-stack web application built with React and Node.js for managing projects and tasks efficiently.</p>
+                    <div class="project-links">
+                        <a href="#" onclick="event.stopPropagation()">GitHub →</a>
+                        <a href="#" onclick="event.stopPropagation()">Live Demo →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="toggleDetail(1)">
+                <div class="project-img">💻</div>
+                <div class="project-content">
+                    <h3>Embedded Systems Project</h3>
+                    <p>Real-time operating system implementation using FreeRTOS on microcontroller with multiple concurrent tasks.</p>
+                    <div class="project-links">
+                        <a href="#" onclick="event.stopPropagation()">GitHub →</a>
+                        <a href="#" onclick="event.stopPropagation()">Documentation →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="toggleDetail(2)">
+                <div class="project-img">⚡</div>
+                <div class="project-content">
+                    <h3>Machine Learning Model</h3>
+                    <p>Python-based machine learning project for predictive analytics with data visualization and model evaluation.</p>
+                    <div class="project-links">
+                        <a href="#" onclick="event.stopPropagation()">GitHub →</a>
+                        <a href="#" onclick="event.stopPropagation()">Notebook →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="toggleDetail(3)">
+                <div class="project-img">🎨</div>
+                <div class="project-content">
+                    <h3>Mobile App Development</h3>
+                    <p>Cross-platform mobile application with responsive design, real-time data sync, and offline capabilities.</p>
+                    <div class="project-links">
+                        <a href="#" onclick="event.stopPropagation()">GitHub →</a>
+                        <a href="#" onclick="event.stopPropagation()">App Store →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="toggleDetail(4)">
+                <div class="project-img">🔐</div>
+                <div class="project-content">
+                    <h3>Security Analysis Tool</h3>
+                    <p>Network security tool for vulnerability scanning and penetration testing with comprehensive reporting features.</p>
+                    <div class="project-links">
+                        <a href="#" onclick="event.stopPropagation()">GitHub →</a>
+                        <a href="#" onclick="event.stopPropagation()">Demo →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="toggleDetail(5)">
+                <div class="project-img">📊</div>
+                <div class="project-content">
+                    <h3>Data Analytics Dashboard</h3>
+                    <p>Interactive dashboard for data visualization and analytics with real-time updates and custom filtering options.</p>
+                    <div class="project-links">
+                        <a href="#" onclick="event.stopPropagation()">GitHub →</a>
+                        <a href="#" onclick="event.stopPropagation()">Live Demo →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Details Sections -->
+        <div class="project-detail" id="detail-0">
+            <h3>Web Application Platform</h3>
+            <div class="project-detail-content">
+                <div>
+                    <p><strong>Project Overview:</strong></p>
+                    <p>A comprehensive web application platform designed to streamline project and task management for teams. The application features real-time collaboration, intuitive user interface, and robust backend architecture.</p>
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>User authentication and authorization</li>
+                        <li>Real-time task updates using WebSockets</li>
+                        <li>Drag-and-drop interface for task management</li>
+                        <li>Team collaboration features with comments</li>
+                        <li>Email notifications and reminders</li>
+                    </ul>
+                </div>
+                <div class="project-tech-stack">
+                    <h4>Technology Stack</h4>
+                    <ul class="tech-list">
+                        <li>React.js with Hooks</li>
+                        <li>Node.js & Express</li>
+                        <li>MongoDB</li>
+                        <li>Socket.io</li>
+                        <li>JWT Authentication</li>
+                        <li>Docker & AWS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-detail" id="detail-1">
+            <h3>Embedded Systems Project</h3>
+            <div class="project-detail-content">
+                <div>
+                    <p><strong>Project Overview:</strong></p>
+                    <p>A complex real-time operating system implementation using FreeRTOS on an ARM Cortex microcontroller. This project demonstrates proficiency in embedded systems, real-time programming, and hardware-software integration.</p>
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Multi-tasking with priority scheduling</li>
+                        <li>Inter-process communication using queues</li>
+                        <li>Hardware timer interrupts</li>
+                        <li>Memory management optimization</li>
+                        <li>Real-time sensor data acquisition</li>
+                    </ul>
+                </div>
+                <div class="project-tech-stack">
+                    <h4>Technology Stack</h4>
+                    <ul class="tech-list">
+                        <li>C/C++</li>
+                        <li>FreeRTOS</li>
+                        <li>ARM Cortex-M4</li>
+                        <li>STM32 Microcontroller</li>
+                        <li>SPI/I2C Protocols</li>
+                        <li>Keil uVision IDE</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-detail" id="detail-2">
+            <h3>Machine Learning Model</h3>
+            <div class="project-detail-content">
+                <div>
+                    <p><strong>Project Overview:</strong></p>
+                    <p>A machine learning project focused on predictive analytics using supervised learning algorithms. The project includes data preprocessing, model training, evaluation, and deployment ready code.</p>
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Data exploration and preprocessing</li>
+                        <li>Feature engineering and selection</li>
+                        <li>Multiple model training and comparison</li>
+                        <li>Cross-validation and hyperparameter tuning</li>
+                        <li>Visualization of results and insights</li>
+                    </ul>
+                </div>
+                <div class="project-tech-stack">
+                    <h4>Technology Stack</h4>
+                    <ul class="tech-list">
+                        <li>Python</li>
+                        <li>Scikit-learn</li>
+                        <li>Pandas & NumPy</li>
+                        <li>Matplotlib & Seaborn</li>
+                        <li>TensorFlow/Keras</li>
+                        <li>Jupyter Notebooks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-detail" id="detail-3">
+            <h3>Mobile App Development</h3>
+            <div class="project-detail-content">
+                <div>
+                    <p><strong>Project Overview:</strong></p>
+                    <p>A cross-platform mobile application developed with modern frameworks, featuring seamless user experience across iOS and Android. Includes offline support and real-time synchronization.</p>
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Native performance with cross-platform code</li>
+                        <li>Offline-first architecture</li>
+                        <li>Real-time data synchronization</li>
+                        <li>Push notifications</li>
+                        <li>Intuitive UI/UX design</li>
+                    </ul>
+                </div>
+                <div class="project-tech-stack">
+                    <h4>Technology Stack</h4>
+                    <ul class="tech-list">
+                        <li>React Native</li>
+                        <li>Firebase</li>
+                        <li>Redux State Management</li>
+                        <li>SQLite (Local DB)</li>
+                        <li>iOS & Android SDK</li>
+                        <li>REST APIs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-detail" id="detail-4">
+            <h3>Security Analysis Tool</h3>
+            <div class="project-detail-content">
+                <div>
+                    <p><strong>Project Overview:</strong></p>
+                    <p>A comprehensive security analysis tool for vulnerability scanning and penetration testing. Designed to identify security weaknesses in network infrastructure and provide detailed remediation recommendations.</p>
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Port and service scanning</li>
+                        <li>Vulnerability database integration</li>
+                        <li>Network mapping and analysis</li>
+                        <li>Threat severity classification</li>
+                        <li>Detailed reporting with recommendations</li>
+                    </ul>
+                </div>
+                <div class="project-tech-stack">
+                    <h4>Technology Stack</h4>
+                    <ul class="tech-list">
+                        <li>Python</li>
+                        <li>Nmap & Scapy</li>
+                        <li>SQLite</li>
+                        <li>PyQt for GUI</li>
+                        <li>OWASP Standards</li>
+                        <li>JSON Reporting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-detail" id="detail-5">
+            <h3>Data Analytics Dashboard</h3>
+            <div class="project-detail-content">
+                <div>
+                    <p><strong>Project Overview:</strong></p>
+                    <p>An interactive data analytics dashboard providing real-time insights and visualizations. Built for business intelligence with customizable reports and drill-down capabilities.</p>
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Real-time data updates</li>
+                        <li>Interactive charts and graphs</li>
+                        <li>Custom filter and date range selection</li>
+                        <li>Exportable reports (PDF, Excel)</li>
+                        <li>User role-based access control</li>
+                    </ul>
+                </div>
+                <div class="project-tech-stack">
+                    <h4>Technology Stack</h4>
+                    <ul class="tech-list">
+                        <li>React.js</li>
+                        <li>D3.js & Chart.js</li>
+                        <li>Node.js Backend</li>
+                        <li>PostgreSQL</li>
+                        <li>Plotly</li>
+                        <li>AWS S3 Storage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <p>I'm always open to new opportunities and collaborations.</p>
+        <div class="contact-links">
+            <a href="mailto:your.email@example.com">Email</a>
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="your-resume.pdf" target="_blank">Resume</a>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Toggle project details
+        function toggleDetail(index) {
+            // Hide all project details
+            document.querySelectorAll('.project-detail').forEach(detail => {
+                detail.classList.remove('active');
+            });
+            
+            // Show the selected project detail
+            const detailElement = document.getElementById(`detail-${index}`);
+            if (detailElement) {
+                detailElement.classList.add('active');
+                // Scroll to the detail section
+                detailElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+    </script>
+</body>
+</html>
