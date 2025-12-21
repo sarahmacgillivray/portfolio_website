@@ -375,14 +375,14 @@
                 </div>
             </div>
 
-            <div class="project-card" onclick="toggleDetail(1)">
-                <div class="project-img">💻</div>
+            <div class="project-card" onclick="toggleDetail(2)">
+                <div class="project-img">⚙️</div>
                 <div class="project-content">
-                    <h3>Embedded Systems Project</h3>
-                    <p>Real-time operating system implementation using FreeRTOS on microcontroller with multiple concurrent tasks.</p>
+                    <h3>OS161 Operating System Development</h3>
+                    <p>A multi-month intensive project building a functional Unix-like kernel from scratch, covering synchronization, system calls, and virtual memory.</p>
                     <div class="project-links">
-                        <a href="#" onclick="event.stopPropagation()">GitHub →</a>
-                        <a href="#" onclick="event.stopPropagation()">Documentation →</a>
+                        <a href="#" onclick="event.stopPropagation()">Kernel Source →</a>
+                        <a href="#" onclick="event.stopPropagation()">Design Docs →</a>
                     </div>
                 </div>
             </div>
@@ -390,8 +390,9 @@
             <div class="project-card" onclick="toggleDetail(2)">
                 <div class="project-img">⚡</div>
                 <div class="project-content">
-                    <h3>Machine Learning Model</h3>
-                    <p>Python-based machine learning project for predictive analytics with data visualization and model evaluation.</p>
+                    <h3>ARC4 Hardware Decryptor & Parallel Cracker</h3>
+                    <p>Built an FPGA-based ARC4 cipher system in SystemVerilog with decryption, brute-force key cracking,
+                         and parallelized cryptanalysis, using on-chip memory and a ready-enable protocol.</p>
                     <div class="project-links">
                         <a href="#" onclick="event.stopPropagation()">GitHub →</a>
                         <a href="#" onclick="event.stopPropagation()">Notebook →</a>
@@ -466,59 +467,81 @@
             </div>
         </div>
 
-        <div class="project-detail" id="detail-1">
-            <h3>Embedded Systems Project</h3>
+        <div class="project-detail" id="detail-2">
+            <h3>OS161 Operating System Development</h3>
             <div class="project-detail-content">
                 <div>
                     <p><strong>Project Overview:</strong></p>
-                    <p>A complex real-time operating system implementation using FreeRTOS on an ARM Cortex microcontroller. This project demonstrates proficiency in embedded systems, real-time programming, and hardware-software integration.</p>
-                    <p><strong>Key Features:</strong></p>
-                    <ul style="margin-left: 1.5rem;">
-                        <li>Multi-tasking with priority scheduling</li>
-                        <li>Inter-process communication using queues</li>
-                        <li>Hardware timer interrupts</li>
-                        <li>Memory management optimization</li>
-                        <li>Real-time sensor data acquisition</li>
+                    <p>I designed and implemented core kernel subsystems for OS161, a simplified educational operating system. 
+                        This project involved transitioning from a limited, single-tasking kernel to a robust, multi-process 
+                        system with full virtual memory support.</p>
+                    
+                    <p><strong>Major Milestones:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li><strong>Synchronization Primitives:</strong> Implemented blocking locks and condition 
+                            variables using hardware-level atomic instructions to ensure thread safety.</li>
+                        <li><strong>File System Interface:</strong> Built the system call layer for file 
+                            I/O (open, read, write, lseek) utilizing the Virtual File System (VFS) and safe kernel/user-land memory copying.</li>
+                        <li><strong>Process Management:</strong> Developed <code>fork()</code> and <code>execv()</code> 
+                            mechanisms, establishing process abstractions and protection boundaries.</li>
+                        <li><strong>Virtual Memory:</strong> Engineered a full VM system including TLB fault handling, 
+                            demand-paged memory, and multi-level page tables.</li>
                     </ul>
                 </div>
                 <div class="project-tech-stack">
-                    <h4>Technology Stack</h4>
+                    <h4>Learning Outcomes</h4>
                     <ul class="tech-list">
-                        <li>C/C++</li>
-                        <li>FreeRTOS</li>
-                        <li>ARM Cortex-M4</li>
-                        <li>STM32 Microcontroller</li>
-                        <li>SPI/I2C Protocols</li>
-                        <li>Keil uVision IDE</li>
+                        <li>Kernel-level C</li>
+                        <li>GDB Debugging</li>
+                        <li>Concurrency Control</li>
+                        <li>Memory Management</li>
+                        <li>TLB & Paging</li>
+                        <li>System Call Design</li>
+                        <li>Git Version Control</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="project-detail" id="detail-2">
-            <h3>Machine Learning Model</h3>
+            <h3>ARC4 Hardware Decryptor & Parallel Cracker</h3>
             <div class="project-detail-content">
                 <div>
                     <p><strong>Project Overview:</strong></p>
-                    <p>A machine learning project focused on predictive analytics using supervised learning algorithms. The project includes data preprocessing, model training, evaluation, and deployment ready code.</p>
+                    <p>Designed and implemented a complete ARC4 stream cipher system in SystemVerilog on an FPGA, including decryption,
+                        brute-force key cracking, and parallelized cryptanalysis. The design leveraged multiple on-chip SRAM blocks, a 
+                        ready-enable microprotocol for variable-latency modules, and a modular hardware architecture to support scalability
+                         and correctness.
+
+                        The project was built incrementally, starting with ARC4 state initialization and key scheduling,
+                         followed by pseudo-random keystream generation and ciphertext decryption using length-prefixed
+                          messages stored in on-chip memory. I then extended the system to brute-force unknown encryption
+                           keys by detecting valid ASCII plaintext, and finally implemented a parallel cracking architecture
+                            that split the key space across multiple decryption cores to achieve near-2× speedup.
+
+                        Throughout the project, I emphasized correctness, testability, and hardware realism, writing 
+                        comprehensive RTL and post-synthesis testbenches, validating memory contents in simulation and 
+                        on physical hardware, and adhering strictly to synthesis-safe design constraints.</p>
                     <p><strong>Key Features:</strong></p>
                     <ul style="margin-left: 1.5rem;">
-                        <li>Data exploration and preprocessing</li>
-                        <li>Feature engineering and selection</li>
-                        <li>Multiple model training and comparison</li>
-                        <li>Cross-validation and hyperparameter tuning</li>
-                        <li>Visualization of results and insights</li>
+                        <li>ARC4 state initialization and key scheduling</li>
+                        <li>Pseudo-random keystream generation and decryption</li>
+                        <li>Brute-force key cracking with ASCII validation</li>
+                        <li>Parallelized decryption for faster key search</li>
+                        <li>On-chip memory management and ready-enable microprotocol</li>
+                        <li>RTL and post-synthesis testbench validation</li>
                     </ul>
                 </div>
                 <div class="project-tech-stack">
                     <h4>Technology Stack</h4>
                     <ul class="tech-list">
-                        <li>Python</li>
-                        <li>Scikit-learn</li>
-                        <li>Pandas & NumPy</li>
-                        <li>Matplotlib & Seaborn</li>
-                        <li>TensorFlow/Keras</li>
-                        <li>Jupyter Notebooks</li>
+                        <li>SystemVerilog & FPGA design</li>
+                        <li>Digital logic & RTL design</li>
+                        <li>On-chip memory management (SRAM)</li>
+                        <li>Parallel hardware architecture</li>
+                        <li>Microprotocol design for variable-latency modules</li>
+                        <li>Testbench creation & hardware verification</li>
+                        <li>Python for simulation, analysis, and automation</li>
                     </ul>
                 </div>
             </div>
