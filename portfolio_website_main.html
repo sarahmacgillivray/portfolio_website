@@ -208,6 +208,28 @@
             display: block;
         }
 
+        .project-detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .close-btn {
+            background: #0c4121;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .close-btn:hover {
+            background: #062d16;
+        }
+
         .project-detail h3 {
             font-size: 2rem;
             margin-bottom: 1rem;
@@ -362,6 +384,7 @@
 
     <section id="projects">
         <h2>Featured Projects</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 2rem; font-style: italic;">Click on any project card for more details</p>
         <div class="projects">
             <div class="project-card" onclick="toggleDetail(0)">
                 <div class="project-img">🚀</div>
@@ -375,7 +398,7 @@
                 </div>
             </div>
 
-            <div class="project-card" onclick="toggleDetail(2)">
+            <div class="project-card" onclick="toggleDetail(1)">
                 <div class="project-img">⚙️</div>
                 <div class="project-content">
                     <h3>OS161 Operating System Development</h3>
@@ -401,37 +424,34 @@
             </div>
 
             <div class="project-card" onclick="toggleDetail(3)">
-                <div class="project-img">🎨</div>
+                <div class="project-img">🔥</div>
                 <div class="project-content">
-                    <h3>Mobile App Development</h3>
-                    <p>Cross-platform mobile application with responsive design, real-time data sync, and offline capabilities.</p>
+                    <h3>Autonomous Firefighter Robot</h3>
+                    <p>Built an autonomous robot that navigates a maze, detects an open flame, and extinguishes it using onboard sensors and control logic.</p>
                     <div class="project-links">
-                        <a href="#" onclick="event.stopPropagation()">GitHub →</a>
-                        <a href="#" onclick="event.stopPropagation()">App Store →</a>
+                        <a href="#" onclick="event.stopPropagation()">Documentation →</a>
                     </div>
                 </div>
             </div>
 
             <div class="project-card" onclick="toggleDetail(4)">
-                <div class="project-img">🔐</div>
+                <div class="project-img">🤖</div>
                 <div class="project-content">
-                    <h3>Security Analysis Tool</h3>
-                    <p>Network security tool for vulnerability scanning and penetration testing with comprehensive reporting features.</p>
+                    <h3>Autonomous Sumo-Bot Robot</h3>
+                    <p>Designed and built a fully autonomous sumo robot using infrared sensing and edge detection to locate, charge, and push opponents out of the ring.</p>
                     <div class="project-links">
-                        <a href="#" onclick="event.stopPropagation()">GitHub →</a>
-                        <a href="#" onclick="event.stopPropagation()">Demo →</a>
+                        <a href="#" onclick="event.stopPropagation()">Documentation →</a>
                     </div>
                 </div>
             </div>
 
             <div class="project-card" onclick="toggleDetail(5)">
-                <div class="project-img">📊</div>
+                <div class="project-img" style="background: url('images/crash_shell.jpg') center/cover no-repeat; background-color: #0c4121;"></div>
                 <div class="project-content">
-                    <h3>Data Analytics Dashboard</h3>
-                    <p>Interactive dashboard for data visualization and analytics with real-time updates and custom filtering options.</p>
+                    <h3>UNIX Shell Implementation</h3>
+                    <p>Implemented a UNIX-like shell in C supporting job control, signal handling, foreground/background execution, and process management.</p>
                     <div class="project-links">
-                        <a href="#" onclick="event.stopPropagation()">GitHub →</a>
-                        <a href="#" onclick="event.stopPropagation()">Live Demo →</a>
+                        <a href="#" onclick="event.stopPropagation()">Report →</a>
                     </div>
                 </div>
             </div>
@@ -439,7 +459,10 @@
 
         <!-- Project Details Sections -->
         <div class="project-detail" id="detail-0">
-            <h3>Web Application Platform</h3>
+            <div class="project-detail-header">
+                <h3>Web Application Platform</h3>
+                <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
+            </div>
             <div class="project-detail-content">
                 <div>
                     <p><strong>Project Overview:</strong></p>
@@ -468,7 +491,10 @@
         </div>
 
         <div class="project-detail" id="detail-1">
-            <h3>OS161 Operating System Development</h3>
+            <div class="project-detail-header">
+                <h3>OS161 Operating System Development</h3>
+                <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
+            </div>
             <div class="project-detail-content">
                 <div>
                     <p><strong>Project Overview:</strong></p>
@@ -504,7 +530,10 @@
         </div>
 
         <div class="project-detail" id="detail-2">
-            <h3>ARC4 Hardware Decryptor & Parallel Cracker</h3>
+            <div class="project-detail-header">
+                <h3>ARC4 Hardware Decryptor & Parallel Cracker</h3>
+                <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
+            </div>
             <div class="project-detail-content">
                 <div>
                     <p><strong>Project Overview:</strong></p>
@@ -548,92 +577,119 @@
         </div>
 
         <div class="project-detail" id="detail-3">
-            <h3>Mobile App Development</h3>
+            <div class="project-detail-header">
+                <h3>Autonomous Firefighter Robot</h3>
+                <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
+            </div>
             <div class="project-detail-content">
                 <div>
                     <p><strong>Project Overview:</strong></p>
-                    <p>A cross-platform mobile application developed with modern frameworks, featuring seamless user experience across iOS and Android. Includes offline support and real-time synchronization.</p>
+                    <p>
+                    Designed and implemented a fully autonomous firefighter robot capable of navigating a walled maze, detecting an open flame, and extinguishing it using an onboard fan. The robot combined sensor-based navigation, real-time decision-making, and environmental feedback, and was the only robot to successfully complete both challenge mazes.
+                    </p>
+
                     <p><strong>Key Features:</strong></p>
                     <ul style="margin-left: 1.5rem;">
-                        <li>Native performance with cross-platform code</li>
-                        <li>Offline-first architecture</li>
-                        <li>Real-time data synchronization</li>
-                        <li>Push notifications</li>
-                        <li>Intuitive UI/UX design</li>
+                        <li>Autonomous maze navigation using dual ultrasonic sensors</li>
+                        <li>Infrared flame detection and localization</li>
+                        <li>Automated fire suppression using onboard fan</li>
+                        <li>Real-time sensor data display on LCD</li>
+                        <li>Robust control logic enabling full challenge completion</li>
                     </ul>
                 </div>
+
                 <div class="project-tech-stack">
                     <h4>Technology Stack</h4>
                     <ul class="tech-list">
-                        <li>React Native</li>
-                        <li>Firebase</li>
-                        <li>Redux State Management</li>
-                        <li>SQLite (Local DB)</li>
-                        <li>iOS & Android SDK</li>
-                        <li>REST APIs</li>
+                        <li>BASIC programming language</li>
+                        <li>Ultrasonic distance sensors</li>
+                        <li>Infrared flame sensor</li>
+                        <li>LCD display integration</li>
+                        <li>Embedded robotics & autonomous navigation</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="project-detail" id="detail-4">
-            <h3>Security Analysis Tool</h3>
+            <div class="project-detail-header">
+                <h3>Sumo-Bot Autonomous Robot</h3>
+                <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
+            </div>
             <div class="project-detail-content">
                 <div>
                     <p><strong>Project Overview:</strong></p>
-                    <p>A comprehensive security analysis tool for vulnerability scanning and penetration testing. Designed to identify security weaknesses in network infrastructure and provide detailed remediation recommendations.</p>
+                    <p>
+                    Designed and built a fully autonomous sumo robot capable of detecting, charging, and pushing an opponent out of a competition ring. The robot uses infrared sensing to locate other robots and a phototransistor-based edge detection system to avoid exiting the ring, enabling aggressive yet controlled behavior.
+                    </p>
+
                     <p><strong>Key Features:</strong></p>
                     <ul style="margin-left: 1.5rem;">
-                        <li>Port and service scanning</li>
-                        <li>Vulnerability database integration</li>
-                        <li>Network mapping and analysis</li>
-                        <li>Threat severity classification</li>
-                        <li>Detailed reporting with recommendations</li>
+                        <li>Autonomous opponent detection using infrared sensors</li>
+                        <li>Edge detection using phototransistors to prevent self-exit</li>
+                        <li>Wedge/plow mechanical design for effective pushing</li>
+                        <li>Closed-loop motor control for rapid engagement</li>
+                        <li>Custom hand-built and soldered circuitry</li>
                     </ul>
                 </div>
+
                 <div class="project-tech-stack">
                     <h4>Technology Stack</h4>
                     <ul class="tech-list">
-                        <li>Python</li>
-                        <li>Nmap & Scapy</li>
-                        <li>SQLite</li>
-                        <li>PyQt for GUI</li>
-                        <li>OWASP Standards</li>
-                        <li>JSON Reporting</li>
+                        <li>BASIC programming language</li>
+                        <li>Infrared sensors & phototransistors</li>
+                        <li>DC motors & motor drivers</li>
+                        <li>Custom circuit design & soldering</li>
+                        <li>Autonomous robotics control</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="project-detail" id="detail-5">
-            <h3>Data Analytics Dashboard</h3>
+            <div class="project-detail-header">
+                <h3>UNIX Shell Implementation</h3>
+                <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
+            </div>
+            <div style="margin-bottom: 2rem;">
+                <img src="images/crash_shell.jpg" alt="UNIX Shell Implementation" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            </div>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="videos/crash_demo.mp4" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0c4121; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.3s;">Watch Demo Video →</a>
+            </div>
             <div class="project-detail-content">
                 <div>
                     <p><strong>Project Overview:</strong></p>
-                    <p>An interactive data analytics dashboard providing real-time insights and visualizations. Built for business intelligence with customizable reports and drill-down capabilities.</p>
-                    <p><strong>Key Features:</strong></p>
-                    <ul style="margin-left: 1.5rem;">
-                        <li>Real-time data updates</li>
-                        <li>Interactive charts and graphs</li>
-                        <li>Custom filter and date range selection</li>
-                        <li>Exportable reports (PDF, Excel)</li>
-                        <li>User role-based access control</li>
-                    </ul>
-                </div>
-                <div class="project-tech-stack">
-                    <h4>Technology Stack</h4>
-                    <ul class="tech-list">
-                        <li>React.js</li>
-                        <li>D3.js & Chart.js</li>
-                        <li>Node.js Backend</li>
-                        <li>PostgreSQL</li>
-                        <li>Plotly</li>
-                        <li>AWS S3 Storage</li>
-                    </ul>
-                </div>
+                    <p>
+                        Implemented a simplified UNIX shell in C, supporting process creation, job control, and
+                        foreground/background execution. The shell closely follows UNIX semantics for signal handling,
+                        process groups, and job lifecycle management, and was developed incrementally across multiple
+                        milestones.
+                    </p>
+
+                <p><strong>Key Features:</strong></p>
+                <ul style="margin-left: 1.5rem;">
+                    <li>Command parsing with sequential (<code>;</code>) and background (<code>&</code>) execution</li>
+                    <li>Foreground and background job control with job IDs and PID tracking</li>
+                    <li>Built-in shell commands: <code>jobs</code>, <code>fg</code>, <code>bg</code>, <code>nuke</code>, and <code>quit</code></li>
+                    <li>PATH-based program execution using <code>fork</code> and <code>execvp</code></li>
+                    <li>Accurate job state tracking (running, suspended, finished, killed)</li>
+                    <li>Signal-safe handling of asynchronous events via <code>SIGCHLD</code>, <code>SIGINT</code>, <code>SIGTSTP</code>, and <code>SIGQUIT</code></li>
+                </ul>
+            </div>
+
+            <div class="project-tech-stack">
+                <h4>Technology Stack</h4>
+                <ul class="tech-list">
+                    <li>C (GCC)</li>
+                    <li>UNIX/Linux System Calls</li>
+                    <li>fork / execvp / waitpid</li>
+                    <li>POSIX Signals & Process Groups</li>
+                    <li>Signal-safe Concurrency Design</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
 
     <section id="contact" class="contact">
         <h2>Get In Touch</h2>
@@ -672,8 +728,26 @@
             const detailElement = document.getElementById(`detail-${index}`);
             if (detailElement) {
                 detailElement.classList.add('active');
-                // Scroll to the detail section
-                detailElement.scrollIntoView({
+                // Scroll to the detail section with offset for nav bar
+                setTimeout(() => {
+                    const yOffset = -120; // Adjust this value to control spacing from top
+                    const y = detailElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({top: y, behavior: 'smooth'});
+                }, 0);
+            }
+        }
+
+        // Close project detail
+        function closeDetail() {
+            // Hide all project details
+            document.querySelectorAll('.project-detail').forEach(detail => {
+                detail.classList.remove('active');
+            });
+            
+            // Scroll back to projects section
+            const projectsSection = document.getElementById('projects');
+            if (projectsSection) {
+                projectsSection.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
