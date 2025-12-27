@@ -387,61 +387,44 @@
         <p style="text-align: center; color: #666; margin-bottom: 2rem; font-style: italic;">Click on any project card for more details</p>
         <div class="projects">
             <div class="project-card" onclick="toggleDetail(0)">
-                <div class="project-img">🚀</div>
+                <div class="project-img" style="background: url('images/strava_logo_icon_147232.png') center/cover no-repeat; background-color: #0c4121;"></div>
                 <div class="project-content">
-                    <h3>Web Application Platform</h3>
-                    <p>A full-stack web application built with React and Node.js for managing projects and tasks efficiently.</p>
-                    <div class="project-links">
-                        <a href="#" onclick="event.stopPropagation()">GitHub →</a>
-                        <a href="#" onclick="event.stopPropagation()">Live Demo →</a>
-                    </div>
+                    <h3>Strava-Inspired Fitness App</h3>
+                    <p style="color: #0c4121; font-weight: bold; margin-bottom: 0.5rem;">🚧 Work in Progress</p>
+                    <p>A fitness tracking application featuring GPS route mapping, character selection, and audio effects for an immersive exercise experience.</p>
                 </div>
             </div>
 
             <div class="project-card" onclick="toggleDetail(1)">
-                <div class="project-img">⚙️</div>
+                <div class="project-img" style="background: url('images/os161.jpg') center/cover no-repeat; background-color: #0c4121;"></div>
                 <div class="project-content">
                     <h3>OS161 Operating System Development</h3>
                     <p>A multi-month intensive project building a functional Unix-like kernel from scratch, covering synchronization, system calls, and virtual memory.</p>
-                    <div class="project-links">
-                        <a href="#" onclick="event.stopPropagation()">Kernel Source →</a>
-                        <a href="#" onclick="event.stopPropagation()">Design Docs →</a>
-                    </div>
                 </div>
             </div>
 
             <div class="project-card" onclick="toggleDetail(2)">
-                <div class="project-img">⚡</div>
+                <div class="project-img" style="background: url('images/ModelSim_arc4.jpg') center/cover no-repeat; background-color: #0c4121;"></div>
                 <div class="project-content">
                     <h3>ARC4 Hardware Decryptor & Parallel Cracker</h3>
                     <p>Built an FPGA-based ARC4 cipher system in SystemVerilog with decryption, brute-force key cracking,
                          and parallelized cryptanalysis, using on-chip memory and a ready-enable protocol.</p>
-                    <div class="project-links">
-                        <a href="#" onclick="event.stopPropagation()">GitHub →</a>
-                        <a href="#" onclick="event.stopPropagation()">Notebook →</a>
-                    </div>
                 </div>
             </div>
 
             <div class="project-card" onclick="toggleDetail(3)">
-                <div class="project-img">🔥</div>
+                <div class="project-img" style="background: url('images/fire_flame.jpg') center/cover no-repeat; background-color: #0c4121;"></div>
                 <div class="project-content">
                     <h3>Autonomous Firefighter Robot</h3>
                     <p>Built an autonomous robot that navigates a maze, detects an open flame, and extinguishes it using onboard sensors and control logic.</p>
-                    <div class="project-links">
-                        <a href="#" onclick="event.stopPropagation()">Documentation →</a>
-                    </div>
                 </div>
             </div>
 
             <div class="project-card" onclick="toggleDetail(4)">
-                <div class="project-img">🤖</div>
+                <div class="project-img" style="background: url('images/sumo.jpg') center/cover no-repeat; background-color: #0c4121;"></div>
                 <div class="project-content">
                     <h3>Autonomous Sumo-Bot Robot</h3>
                     <p>Designed and built a fully autonomous sumo robot using infrared sensing and edge detection to locate, charge, and push opponents out of the ring.</p>
-                    <div class="project-links">
-                        <a href="#" onclick="event.stopPropagation()">Documentation →</a>
-                    </div>
                 </div>
             </div>
 
@@ -450,9 +433,6 @@
                 <div class="project-content">
                     <h3>UNIX Shell Implementation</h3>
                     <p>Implemented a UNIX-like shell in C supporting job control, signal handling, foreground/background execution, and process management.</p>
-                    <div class="project-links">
-                        <a href="#" onclick="event.stopPropagation()">Report →</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -460,31 +440,31 @@
         <!-- Project Details Sections -->
         <div class="project-detail" id="detail-0">
             <div class="project-detail-header">
-                <h3>Web Application Platform</h3>
+                <h3>Strava-Inspired Fitness App</h3>
                 <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
             </div>
             <div class="project-detail-content">
                 <div>
                     <p><strong>Project Overview:</strong></p>
-                    <p>A comprehensive web application platform designed to streamline project and task management for teams. The application features real-time collaboration, intuitive user interface, and robust backend architecture.</p>
+                    <p>This project is a fitness tracking application inspired by Strava, featuring GPS route mapping, character selection, and audio effects. Users can track their activities, choose characters, and enjoy immersive audio experiences while exercising.</p>
                     <p><strong>Key Features:</strong></p>
                     <ul style="margin-left: 1.5rem;">
-                        <li>User authentication and authorization</li>
-                        <li>Real-time task updates using WebSockets</li>
-                        <li>Drag-and-drop interface for task management</li>
-                        <li>Team collaboration features with comments</li>
-                        <li>Email notifications and reminders</li>
+                        <li>GPS Route Mapping: Visualize your route on a map using the Google Maps API</li>
+                        <li>Character Selection: Choose your character from a variety of options</li>
+                        <li>Audio Effects: Experience sound effects that enhance the activity tracking experience</li>
+                        <li>Activity Tracking: Track distance, speed, and duration of your workouts</li>
+                        <li>Responsive Design: Works seamlessly on desktop and mobile devices</li>
                     </ul>
                 </div>
                 <div class="project-tech-stack">
                     <h4>Technology Stack</h4>
                     <ul class="tech-list">
-                        <li>React.js with Hooks</li>
-                        <li>Node.js & Express</li>
-                        <li>MongoDB</li>
-                        <li>Socket.io</li>
-                        <li>JWT Authentication</li>
-                        <li>Docker & AWS</li>
+                        <li>React with TypeScript</li>
+                        <li>Google Maps API</li>
+                        <li>Web Audio API</li>
+                        <li>Node.js Backend</li>
+                        <li>Firebase for Data Storage</li>
+                        <li>Tailwind CSS</li>
                     </ul>
                 </div>
             </div>
@@ -533,6 +513,9 @@
             <div class="project-detail-header">
                 <h3>ARC4 Hardware Decryptor & Parallel Cracker</h3>
                 <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
+            </div>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="videos/decrypt.mp4" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0c4121; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.3s;">Watch Demo Video →</a>
             </div>
             <div class="project-detail-content">
                 <div>
@@ -650,9 +633,6 @@
             <div class="project-detail-header">
                 <h3>UNIX Shell Implementation</h3>
                 <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
-            </div>
-            <div style="margin-bottom: 2rem;">
-                <img src="images/crash_shell.jpg" alt="UNIX Shell Implementation" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
             </div>
             <div style="text-align: center; margin-bottom: 2rem;">
                 <a href="videos/crash_demo.mp4" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0c4121; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.3s;">Watch Demo Video →</a>
