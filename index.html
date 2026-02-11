@@ -15,6 +15,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
+            background-color: #e8f1f8;
         }
 
         nav {
@@ -46,40 +47,71 @@
         }
 
         section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 3rem 2rem;
+            width: 100%;
         }
 
         .hero {
-            min-height: 100vh;
+            height: 100vh;
+            width: 100vw;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: url('images/header.JPG') center/cover no-repeat;
+            background-image: url('images/header.JPG');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
             color: white;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            left: 0;
+            top: 0;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-            background: rgba(5, 83, 27, 0.3);
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .typing-text {
+            display: inline-block;
+            border-right: 3px solid white;
+            animation: type 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            min-height: 1.2em;
+        }
+
+        @keyframes type {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            0%, 49% {
+                border-right-color: white;
+            }
+            50%, 100% {
+                border-right-color: transparent;
+            }
         }
 
         .hero p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
             animation: fadeInUp 1s ease 0.2s backwards;
-            background: rgba(5, 83, 27, 0.3);
-            padding: 0.5rem 1.5rem;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
+            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.5);
         }
 
         .hero .cta {
@@ -121,7 +153,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
-            align-items: start;
+            align-items: center;
         }
 
         .skills {
@@ -149,13 +181,14 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-bottom: 4rem;
         }
 
         .project-card {
-            background: white;
+            background: #1a3a52;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
@@ -177,11 +210,16 @@
 
         .project-content {
             padding: 1.5rem;
+            color: white;
+        }
+
+        .project-content p {
+            color: #e0e0e0;
         }
 
         .project-content h3 {
             margin-bottom: 1rem;
-            color: #333;
+            color: #ffffff;
         }
 
         .project-links {
@@ -191,7 +229,7 @@
         }
 
         .project-links a {
-            color: #0c4121;
+            color: #64b5f6;
             text-decoration: none;
             font-weight: bold;
         }
@@ -329,7 +367,7 @@
     </nav>
 
     <section id="home" class="hero">
-        <h1>Sarah MacGillivray's Portfolio</h1>
+        <h1><span class="typing-text">Sarah MacGillivray</span></h1>
         <p>Computer Engineering Student | Software Developer</p>
         <a href="#projects" class="cta">View My Work</a>
     </section>
@@ -390,7 +428,7 @@
                 <div class="project-img" style="background: url('images/strava_logo_icon_147232.png') center/cover no-repeat; background-color: #0c4121;"></div>
                 <div class="project-content">
                     <h3>Strava-Inspired Fitness App</h3>
-                    <p style="color: #0c4121; font-weight: bold; margin-bottom: 0.5rem;">🚧 Work in Progress</p>
+                    <p style="color: #a7c6b3; font-weight: bold; margin-bottom: 0.5rem;">🚧 Work in Progress</p>
                     <p>A fitness tracking application featuring GPS route mapping, character selection, and audio effects for an immersive exercise experience.</p>
                 </div>
             </div>
