@@ -3,6 +3,53 @@ const projectDetails = [...document.querySelectorAll("[data-project]")];
 const fieldMapLayout = document.querySelector(".field-map-layout");
 const fieldNotePanel = document.querySelector("#field-note-panel");
 const emptyFieldNote = document.querySelector(".field-note-empty");
+const scrapbookViewer = document.querySelector(".scrapbook-viewer");
+const scrapbookViewerImage = document.querySelector(".scrapbook-viewer-image");
+const scrapbookViewerTitle = document.querySelector("#scrapbook-viewer-title");
+const scrapbookViewerStory = document.querySelector(".scrapbook-viewer-story");
+let lastScrapbookTrigger = null;
+
+document.querySelectorAll("[data-scrapbook-photo]").forEach((button) => {
+    button.addEventListener("click", () => {
+        const image = button.querySelector("img");
+        if (!scrapbookViewer || !image) return;
+
+        lastScrapbookTrigger = button;
+        scrapbookViewerImage.loading = "eager";
+        scrapbookViewerImage.style.aspectRatio = "4 / 3";
+        const applyPhotoAspectRatio = () => {
+            if (scrapbookViewerImage.naturalWidth && scrapbookViewerImage.naturalHeight) {
+                scrapbookViewerImage.style.aspectRatio = `${scrapbookViewerImage.naturalWidth} / ${scrapbookViewerImage.naturalHeight}`;
+            }
+        };
+        scrapbookViewerImage.onload = applyPhotoAspectRatio;
+        scrapbookViewerImage.src = image.currentSrc || image.src;
+        if (scrapbookViewerImage.complete) applyPhotoAspectRatio();
+        scrapbookViewerImage.alt = image.alt;
+        scrapbookViewerTitle.textContent = button.dataset.photoTitle;
+        scrapbookViewerStory.textContent = button.dataset.photoStory;
+        scrapbookViewer.showModal();
+    });
+});
+
+document.querySelector(".scrapbook-viewer-close")?.addEventListener("click", () => {
+    scrapbookViewer?.close();
+});
+
+scrapbookViewer?.addEventListener("click", (event) => {
+    if (event.target === scrapbookViewer) scrapbookViewer.close();
+});
+
+scrapbookViewer?.addEventListener("close", () => {
+    lastScrapbookTrigger?.focus({ preventScroll: true });
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && scrapbookViewer?.open) {
+        event.preventDefault();
+        scrapbookViewer.close();
+    }
+});
 
 const fieldSummaries = {
     biomusic: ["IN PROGRESS", "Firmware & biosensing", "nRF5340 · FreeRTOS · BLE"],
@@ -143,4 +190,11 @@ if (trailRoute && trailMap) {
     window.addEventListener("hashchange", revealTrail);
     window.addEventListener("load", revealTrail, { once: true });
     revealTrail();
+}
+
+const siteHeader = document.querySelector(".site-header");
+if (siteHeader) {
+    const syncHeader = () => siteHeader.classList.toggle("is-scrolled", window.scrollY > 28);
+    syncHeader();
+    window.addEventListener("scroll", syncHeader, { passive: true });
 }
