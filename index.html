@@ -8,8 +8,8 @@
     <title>Staying Curious | Sarah MacGillivray</title>
     <link rel="stylesheet" href="styles.css?v=5">
     <link rel="stylesheet" href="field-notes.css?v=6">
-    <link rel="stylesheet" href="editorial.css?v=11">
-    <script src="script.js?v=8" defer></script>
+    <link rel="stylesheet" href="editorial.css?v=14">
+    <script src="script.js?v=12" defer></script>
 </head>
 <body>
     <header class="site-header">
@@ -44,14 +44,41 @@
                 <h2 id="about-title">Curiosity,<br>in and out<br>of the lab.</h2>
             </header>
             <div class="about-collage" aria-label="A few views from the trail and the workbench">
-                <figure class="scrapbook-photo scrapbook-coquihalla"><img src="images/coquihalla.jpg" alt="Sarah hiking a rocky ridgeline in the Coquihalla mountains" loading="lazy"><figcaption><span>COQUIHALLA / BC</span> Above the clouds</figcaption></figure>
-                <figure class="scrapbook-photo scrapbook-running"><img src="images/running_photo.JPG" alt="Sarah racing in a UBC cross-country singlet at the UBC Farm West XC race" loading="lazy"><figcaption><span>UBC FARM WEST XC</span> Cross-country</figcaption></figure>
-                <figure class="scrapbook-photo scrapbook-sumo"><img src="images/sumo.jpg" alt="Close-up of the hand-built autonomous sumo robot" loading="lazy"><figcaption><span>MADE BY HAND</span> Autonomous sumo-bot</figcaption></figure>
-                <figure class="scrapbook-photo scrapbook-car"><img src="images/car_image_visual.jpg" alt="The small autonomous car built for a team robotics competition" loading="lazy"><figcaption><span>ON THE BENCH</span> Team A2 · autonomous car</figcaption></figure>
+                <figure class="scrapbook-photo scrapbook-coquihalla">
+                    <button class="scrapbook-trigger" type="button" data-scrapbook-photo data-photo-title="Coquihalla / British Columbia" data-photo-story="A day hiking above the clouds in the Coquihalla mountains." aria-label="View larger photo: hiking in the Coquihalla mountains">
+                        <img src="images/coquihalla.jpg" alt="Sarah hiking a rocky ridgeline in the Coquihalla mountains" loading="lazy">
+                    </button>
+                    <figcaption><span>COQUIHALLA / BC</span><em>Above the clouds</em><small>49° N · BRITISH COLUMBIA</small></figcaption>
+                </figure>
+                <figure class="scrapbook-photo scrapbook-running">
+                    <button class="scrapbook-trigger" type="button" data-scrapbook-photo data-photo-title="UBC Farm West XC" data-photo-story="Racing cross-country for UBC at the UBC Farm West XC race." aria-label="View larger photo: racing at the UBC Farm West XC race">
+                        <img src="images/running_photo.JPG" alt="Sarah racing in a UBC cross-country singlet at the UBC Farm West XC race" loading="lazy">
+                    </button>
+                    <figcaption><span>UBC FARM WEST XC</span><em>Race day</em><small>VANCOUVER · BC</small></figcaption>
+                </figure>
+                <figure class="scrapbook-photo scrapbook-sumo">
+                    <button class="scrapbook-trigger" type="button" data-scrapbook-photo data-photo-title="Autonomous Sumo-Bot" data-photo-story="A hand-built autonomous robot designed to detect an opponent and push it out of the ring." aria-label="View larger photo: the autonomous sumo-bot">
+                        <img src="images/sumo.jpg" alt="Close-up of the hand-built autonomous sumo robot" loading="lazy">
+                    </button>
+                    <figcaption><span>MADE BY HAND</span><em>Autonomous sumo-bot</em><small>ROBOTICS PROJECT</small></figcaption>
+                </figure>
+                <figure class="scrapbook-photo scrapbook-car">
+                    <button class="scrapbook-trigger" type="button" data-scrapbook-photo data-photo-title="Team A2 · Autonomous Car" data-photo-story="Our autonomous car was the fastest across the obstacle and straight courses among 15 teams." aria-label="View larger photo: Team A2 autonomous car">
+                        <img src="images/car_image_visual.jpg" alt="The small autonomous car built for a team robotics competition" loading="lazy">
+                    </button>
+                    <figcaption><span>ON THE BENCH</span><em>Team A2 · autonomous car</em><small>ROS 2 · AUTONOMY</small></figcaption>
+                </figure>
             </div>
+            <dialog class="scrapbook-viewer" aria-labelledby="scrapbook-viewer-title">
+                <button class="scrapbook-viewer-close" type="button" aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button>
+                <figure class="scrapbook-viewer-print">
+                    <img class="scrapbook-viewer-image" src="" alt="">
+                    <figcaption><p class="eyebrow">PHOTO ALBUM</p><h3 id="scrapbook-viewer-title"></h3><p class="scrapbook-viewer-story"></p></figcaption>
+                </figure>
+            </dialog>
             <div class="about-story">
                 <p class="about-lede">I was the kid building legos and minecraft villages and taking electronics apart to see what was inside. These days, that curiosity shows up in firmware, hardware, and whole systems.</p>
-                <p>I’m in my fifth year of Computer Engineering at UBC. Through co-op, I’ve worked on production software and embedded systems, designed PCBs for industrial ultrasound hardware, and used machine learning for image analysis.</p>
+                <p>Through co-op, I’ve worked on production software and embedded systems, designed PCBs for industrial ultrasound hardware, and used machine learning for image analysis.</p>
                 <div class="personal-columns">
                     <article class="personal-note">
                         <p class="note-index">UBC VARSITY</p>

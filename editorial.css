@@ -53,20 +53,37 @@
 .about-heading h2 em { color: #527452; font-weight: 400; }
 .about-heading-note { margin: 20px 0 0; color: #6b796b; font-size: .56rem; font-weight: 700; letter-spacing: .14em; }
 .about-collage { min-width: 0; height: 570px; align-self: start; grid-column: 1; grid-row: 1 / span 2; position: relative; margin-top: 4px; }
-.scrapbook-photo { position: absolute; display: flex; flex-direction: column; margin: 0; padding: 7px 7px 0; background: #fbfaf3; box-shadow: 0 7px 18px rgb(36 48 39 / 13%); animation: paper-photo-enter .55s ease-out both; }
-.scrapbook-photo img { display: block; width: 100%; height: auto; min-height: 0; flex: 1 1 auto; object-fit: cover; transition: transform .35s ease; }
-.scrapbook-photo:hover img { transform: scale(1.025); }
-.scrapbook-photo figcaption { min-height: 34px; padding: 8px 4px 5px; color: #49584b; font-size: .68rem; line-height: 1.2; }
-.scrapbook-photo figcaption span { display: inline-block; margin-right: 7px; color: #a44f35; font-size: .48rem; font-weight: 700; letter-spacing: .1em; }
-.scrapbook-coquihalla { z-index: 1; top: 0; left: 0; width: 73%; height: 350px; transform: rotate(-1.3deg); animation-delay: .04s; }
+.scrapbook-photo { position: absolute; display: flex; flex-direction: column; margin: 0; padding: 8px 8px 0; background: #fbfaf3; box-shadow: 0 8px 20px rgb(36 48 39 / 14%); animation: paper-photo-enter .55s ease-out both; }
+.scrapbook-trigger { min-height: 0; flex: 1 1 auto; position: relative; display: block; width: 100%; overflow: hidden; padding: 0; border: 0; background: #d9ded5; cursor: zoom-in; }
+.scrapbook-trigger:focus-visible { outline: 3px solid #a44f35; outline-offset: -3px; }
+.scrapbook-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.scrapbook-trigger:hover img { transform: scale(1.035); }
+.scrapbook-trigger::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .14; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E"); mix-blend-mode: multiply; }
+.scrapbook-photo figcaption { min-height: 45px; padding: 7px 5px 8px; color: #49584b; font: italic .82rem/1.1 "Segoe Print", "Bradley Hand", var(--body); }
+.scrapbook-photo figcaption span, .scrapbook-photo figcaption small { display: block; color: #a44f35; font: 700 .46rem/1.25 var(--body); letter-spacing: .1em; }
+.scrapbook-photo figcaption em { display: block; padding-top: 3px; font-style: italic; }
+.scrapbook-photo figcaption small { padding-top: 3px; color: #71806f; font-size: .42rem; letter-spacing: .08em; }
+.scrapbook-coquihalla { z-index: 1; top: 0; left: 1%; width: 72%; height: 346px; transform: rotate(-2.2deg); animation-delay: .04s; }
 .scrapbook-coquihalla img { object-position: 52% 64%; }
-.scrapbook-running { z-index: 3; top: 48px; right: 1%; width: 42%; height: 230px; transform: rotate(1.1deg); animation-delay: .2s; }
+.scrapbook-running { z-index: 3; top: 32px; right: 0; width: 43%; height: 238px; transform: rotate(2.2deg); animation-delay: .2s; }
 .scrapbook-running img { object-position: 49% 29%; }
-.scrapbook-running figcaption span { display: block; margin: 0 0 3px; }
-.scrapbook-car { z-index: 2; bottom: 4px; right: 0; width: 46%; height: 195px; transform: rotate(1.5deg); animation-delay: .12s; }
+.scrapbook-car { z-index: 2; bottom: 15px; right: 1%; width: 46%; height: 210px; transform: rotate(-1.7deg); animation-delay: .12s; }
 .scrapbook-car img { object-position: 72% center; }
-.scrapbook-sumo { z-index: 4; bottom: 4px; left: 6%; width: 48%; height: 195px; transform: rotate(-1.4deg); animation-delay: .28s; }
+.scrapbook-sumo { z-index: 4; bottom: 0; left: 4%; width: 47%; height: 204px; transform: rotate(1.6deg); animation-delay: .28s; }
 .scrapbook-sumo img { object-position: center 42%; }
+.scrapbook-viewer { width: min(1050px, calc(100vw - 40px)); max-width: none; max-height: min(88svh, 820px); padding: 18px; overflow: auto; border: 1px solid #d4d7cb; color: var(--ink); background: #f3f1e7; box-shadow: 0 28px 90px rgb(10 18 14 / 40%); }
+.scrapbook-viewer[open] { animation: shutter-open .28s cubic-bezier(.2,.8,.2,1) both; }
+.scrapbook-viewer::backdrop { background: rgb(17 28 23 / 78%); }
+.scrapbook-viewer-close { position: sticky; z-index: 2; top: 0; float: right; display: flex; align-items: center; gap: 12px; padding: 6px 9px; border: 0; color: #f7f3e8; background: #263b30; cursor: pointer; font-size: .7rem; text-transform: uppercase; letter-spacing: .09em; }
+.scrapbook-viewer-close span { font-size: 1.15rem; line-height: 1; }
+.scrapbook-viewer-print { clear: both; display: grid; grid-template-columns: minmax(0, 1fr) 220px; align-items: end; gap: 20px; margin: 0; padding-top: 10px; }
+.scrapbook-viewer-image { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; max-height: min(72svh, 660px); object-fit: contain; background: #e8e4d7; }
+.scrapbook-viewer-print figcaption { padding: 0 3px 15px; }
+.scrapbook-viewer-print .eyebrow { margin-bottom: 12px; color: #a44f35; font-size: .56rem; }
+.scrapbook-viewer-print h3 { margin: 0 0 10px; color: var(--ink); font: 400 1.8rem/1.08 var(--display); }
+.scrapbook-viewer-story { margin: 0; color: #5e6d60; font-size: .97rem; line-height: 1.55; }
+@keyframes shutter-open { from { opacity: 0; clip-path: inset(45% 2%); } to { opacity: 1; clip-path: inset(0); } }
+@media (prefers-reduced-motion: reduce) { .scrapbook-viewer[open] { animation: none; } }
 .about-story { grid-column: 2; grid-row: 2; padding: 18px 0 0 4px; }
 .about-lede { max-width: 560px; margin: 0 0 17px; color: var(--ink); font: 600 1.27rem/1.48 var(--body); }
 .about-story > p:not(.about-lede) { max-width: 560px; color: #5e6d60; font-size: .97rem; line-height: 1.72; }
@@ -136,9 +153,9 @@
     .about { width: min(100% - 56px, 1000px); column-gap: 42px; }
     .about-collage { height: 560px; }
     .scrapbook-coquihalla { height: 325px; }
-    .scrapbook-running { top: 35px; height: 205px; }
-    .scrapbook-car { height: 180px; }
-    .scrapbook-sumo { height: 180px; }
+    .scrapbook-running { top: 30px; height: 215px; }
+    .scrapbook-car { height: 190px; }
+    .scrapbook-sumo { height: 190px; }
     .about-heading h2 { font-size: 3.7rem; }
     .personal-columns { gap: 16px; }
 }
@@ -167,11 +184,12 @@
     .about-heading { padding: 0; }
     .about-heading h2 { font-size: 3.65rem; }
     .about-heading-note { margin-top: 13px; }
-    .about-collage { width: 100%; height: 535px; flex: none; margin: 0; }
-    .scrapbook-coquihalla { width: 74%; height: 300px; }
-    .scrapbook-running { top: 26px; right: 0; width: 44%; height: 182px; }
-    .scrapbook-car { right: 0; width: 46%; height: 165px; }
-    .scrapbook-sumo { bottom: 0; left: 6%; width: 48%; height: 165px; }
+    .about-collage { width: 100%; height: 545px; flex: none; margin: 0; }
+    .scrapbook-coquihalla { width: 74%; height: 302px; }
+    .scrapbook-running { top: 26px; right: 0; width: 44%; height: 192px; }
+    .scrapbook-car { right: 0; width: 46%; height: 174px; }
+    .scrapbook-sumo { bottom: 0; left: 6%; width: 48%; height: 174px; }
+    .scrapbook-photo figcaption { min-height: 48px; padding: 6px 4px; font-size: .75rem; }
     .about-story { padding: 0; }
     .about-lede { font-size: 1.19rem; }
     .personal-columns { gap: 20px; }
@@ -189,14 +207,19 @@
     .hero-eyebrow { max-width: 300px; line-height: 1.7; }
     .about { width: calc(100% - 36px); }
     .about-heading h2 { font-size: 3.15rem; }
-    .about-collage { height: 505px; }
-    .scrapbook-coquihalla { height: 270px; }
-    .scrapbook-running { top: 20px; width: 44%; height: 158px; }
-    .scrapbook-car { height: 150px; }
-    .scrapbook-sumo { height: 150px; }
+    .about-collage { height: 525px; }
+    .scrapbook-coquihalla { height: 286px; }
+    .scrapbook-running { top: 20px; width: 44%; height: 176px; }
+    .scrapbook-car { height: 164px; }
+    .scrapbook-sumo { height: 164px; }
     .scrapbook-photo { padding: 5px 5px 0; }
-    .scrapbook-photo figcaption { min-height: 30px; padding: 7px 3px 4px; font-size: .59rem; }
-    .scrapbook-photo figcaption span { display: block; margin-bottom: 3px; font-size: .43rem; }
+    .scrapbook-photo figcaption { min-height: 48px; padding: 6px 3px 4px; font-size: .7rem; }
+    .scrapbook-photo figcaption span, .scrapbook-photo figcaption small { font-size: .4rem; }
+    .scrapbook-viewer { width: calc(100vw - 24px); max-height: 90svh; padding: 11px; }
+    .scrapbook-viewer-print { grid-template-columns: 1fr; gap: 12px; }
+    .scrapbook-viewer-image { max-height: 58svh; }
+    .scrapbook-viewer-print figcaption { padding: 0 4px 7px; }
+    .scrapbook-viewer-print h3 { font-size: 1.5rem; }
     .personal-columns { grid-template-columns: 1fr; gap: 18px; }
     .personal-note + .personal-note { padding: 17px 0 0; border-top: 1px solid #cbd4c8; border-left: 0; }
     .map-marker { transform: translate(-50%, -50%) scale(.68); }
