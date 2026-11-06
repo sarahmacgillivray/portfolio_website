@@ -8,8 +8,8 @@
     <title>Staying Curious | Sarah MacGillivray</title>
     <link rel="stylesheet" href="styles.css?v=5">
     <link rel="stylesheet" href="field-notes.css?v=6">
-    <link rel="stylesheet" href="editorial.css?v=14">
-    <script src="script.js?v=12" defer></script>
+    <link rel="stylesheet" href="editorial.css?v=34">
+    <script src="script.js?v=13" defer></script>
 </head>
 <body>
     <header class="site-header">
@@ -24,6 +24,19 @@
 
     <main>
         <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-sky" aria-hidden="true"></div>
+            <figure class="hero-photograph">
+                <img src="images/header.JPG" alt="Two hikers standing on a rocky summit above a lake in the Coast Mountains" fetchpriority="high">
+                <svg class="hero-ridge" viewBox="0 0 2048 1536" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+                    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path class="hero-ridge-shadow" pathLength="1" d="M 283 755 L 312 714 L 354 700 L 397 690 L 439 675 L 482 660 L 524 643 L 567 622 L 609 583 L 652 547 L 694 524 L 737 521 L 780 527 L 822 534 L 865 517 L 907 510 L 950 515 L 992 524 L 1035 522 L 1077 504 L 1120 481 L 1162 472 L 1205 478 L 1247 508 L 1290 522 L 1332 527 L 1375 551 L 1417 568 L 1460 578 L 1502 587 L 1545 581 L 1587 576 L 1630 618 L 1630 678 L 1602 716 L 1559 746 L 1517 768 L 1474 805 L 1446 837 L 1417 896 L 1403 972 L 1346 1018 L 1261 1055 L 1219 1087 L 1148 1098 L 1105 1055 L 1063 1032 L 1020 1017 L 978 1007 L 935 1000 L 893 995 L 850 993 L 808 991 L 765 985 L 723 974 L 680 960 L 638 947 L 595 934 L 553 920 L 510 906 L 468 894 L 425 876 L 383 855 L 340 832 L 310 808"/>
+                        <path class="hero-ridge-line" pathLength="1" d="M 283 755 L 312 714 L 354 700 L 397 690 L 439 675 L 482 660 L 524 643 L 567 622 L 609 583 L 652 547 L 694 524 L 737 521 L 780 527 L 822 534 L 865 517 L 907 510 L 950 515 L 992 524 L 1035 522 L 1077 504 L 1120 481 L 1162 472 L 1205 478 L 1247 508 L 1290 522 L 1332 527 L 1375 551 L 1417 568 L 1460 578 L 1502 587 L 1545 581 L 1587 576 L 1630 618 L 1630 678 L 1602 716 L 1559 746 L 1517 768 L 1474 805 L 1446 837 L 1417 896 L 1403 972 L 1346 1018 L 1261 1055 L 1219 1087 L 1148 1098 L 1105 1055 L 1063 1032 L 1020 1017 L 978 1007 L 935 1000 L 893 995 L 850 993 L 808 991 L 765 985 L 723 974 L 680 960 L 638 947 L 595 934 L 553 920 L 510 906 L 468 894 L 425 876 L 383 855 L 340 832 L 310 808"/>
+                        <path class="hero-ridge-shadow" pathLength="1" d="M 1148 1098 L 1176 1151 L 1205 1190 L 1247 1220 L 1290 1245 L 1332 1272 L 1375 1298 L 1417 1319 L 1455 1348"/>
+                        <path class="hero-ridge-line" pathLength="1" d="M 1148 1098 L 1176 1151 L 1205 1190 L 1247 1220 L 1290 1245 L 1332 1272 L 1375 1298 L 1417 1319 L 1455 1348"/>
+                    </g>
+                    <text class="hero-ridge-note" x="1540" y="1372" transform="rotate(-8 1540 1372)">exploring opportunities</text>
+                </svg>
+            </figure>
             <div class="hero-coverline"><span>VANCOUVER · 49° 16′ N / 123° 07′ W</span></div>
             <div class="hero-content">
                 <p class="eyebrow hero-eyebrow">STAYING CURIOUS</p>
@@ -31,44 +44,82 @@
                 <p class="hero-copy">I’m a fifth-year Computer Engineering student at UBC, focused on embedded systems and hardware. Outside the lab, I run with UBC's varsity XC/track teams and explore the mountains.</p>
                 <a class="cover-route-link" href="#explore"><span>Follow the project trail</span><span aria-hidden="true">↓</span></a>
             </div>
-            <figure class="hero-photograph">
-                <img src="images/header.JPG" alt="Two hikers standing on a rocky summit above a lake in the Coast Mountains" fetchpriority="high">
-                <figcaption><span>COAST MOUNTAINS / BC</span><span>Above the treeline, together.</span></figcaption>
-            </figure>
-            <div class="hero-foot"><span>FOCUS / EMBEDDED SYSTEMS</span><span>HARDWARE · FIRMWARE · ROBOTICS</span></div>
         </section>
 
         <section class="about section-wrap" id="about" aria-labelledby="about-title">
-            <header class="about-heading">
-                <p class="eyebrow">THE PERSON BEHIND THE PROJECTS</p>
-                <h2 id="about-title">Curiosity,<br>in and out<br>of the lab.</h2>
-            </header>
-            <div class="about-collage" aria-label="A few views from the trail and the workbench">
-                <figure class="scrapbook-photo scrapbook-coquihalla">
-                    <button class="scrapbook-trigger" type="button" data-scrapbook-photo data-photo-title="Coquihalla / British Columbia" data-photo-story="A day hiking above the clouds in the Coquihalla mountains." aria-label="View larger photo: hiking in the Coquihalla mountains">
-                        <img src="images/coquihalla.jpg" alt="Sarah hiking a rocky ridgeline in the Coquihalla mountains" loading="lazy">
-                    </button>
-                    <figcaption><span>COQUIHALLA / BC</span><em>Above the clouds</em><small>49° N · BRITISH COLUMBIA</small></figcaption>
-                </figure>
-                <figure class="scrapbook-photo scrapbook-running">
-                    <button class="scrapbook-trigger" type="button" data-scrapbook-photo data-photo-title="UBC Farm West XC" data-photo-story="Racing cross-country for UBC at the UBC Farm West XC race." aria-label="View larger photo: racing at the UBC Farm West XC race">
-                        <img src="images/running_photo.JPG" alt="Sarah racing in a UBC cross-country singlet at the UBC Farm West XC race" loading="lazy">
-                    </button>
-                    <figcaption><span>UBC FARM WEST XC</span><em>Race day</em><small>VANCOUVER · BC</small></figcaption>
-                </figure>
-                <figure class="scrapbook-photo scrapbook-sumo">
-                    <button class="scrapbook-trigger" type="button" data-scrapbook-photo data-photo-title="Autonomous Sumo-Bot" data-photo-story="A hand-built autonomous robot designed to detect an opponent and push it out of the ring." aria-label="View larger photo: the autonomous sumo-bot">
-                        <img src="images/sumo.jpg" alt="Close-up of the hand-built autonomous sumo robot" loading="lazy">
-                    </button>
-                    <figcaption><span>MADE BY HAND</span><em>Autonomous sumo-bot</em><small>ROBOTICS PROJECT</small></figcaption>
-                </figure>
-                <figure class="scrapbook-photo scrapbook-car">
+            <p class="about-kicker">The person behind the projects</p>
+            <h2 id="about-title" class="about-display">Turns out, playing with Lego was good career preparation</h2>
+            <p class="about-intro">I'm a Computer Engineering student at UBC, a varsity cross-country runner, and someone who's always liked figuring out how things work. What started with Lego builds and Minecraft creations eventually turned into robots, circuit boards, firmware, and real-time systems. When I'm not building something, you'll probably find me running, exploring the mountains, or planning my next adventure.</p>
+            <div class="about-collage">
+                <figure class="scrapbook-photo scrap scrap-bench scrapbook-car">
                     <button class="scrapbook-trigger" type="button" data-scrapbook-photo data-photo-title="Team A2 · Autonomous Car" data-photo-story="Our autonomous car was the fastest across the obstacle and straight courses among 15 teams." aria-label="View larger photo: Team A2 autonomous car">
                         <img src="images/car_image_visual.jpg" alt="The small autonomous car built for a team robotics competition" loading="lazy">
                     </button>
-                    <figcaption><span>ON THE BENCH</span><em>Team A2 · autonomous car</em><small>ROS 2 · AUTONOMY</small></figcaption>
+                    <figcaption><span>On the bench</span><em>Team A2</em></figcaption>
+                </figure>
+                <figure class="scrapbook-photo scrap scrap-sumo scrapbook-sumo">
+                    <button class="scrapbook-trigger" type="button" data-scrapbook-photo data-photo-title="Autonomous Sumo-Bot" data-photo-story="A hand-built autonomous robot designed to detect an opponent and push it out of the ring." aria-label="View larger photo: the autonomous sumo-bot">
+                        <img src="images/sumo.jpg" alt="Close-up of the hand-built autonomous sumo robot" loading="lazy">
+                    </button>
+                    <figcaption><span>Soldered</span><em>Sumo-bot</em></figcaption>
+                </figure>
+                <figure class="scrapbook-photo scrap scrap-run scrapbook-running">
+                    <button class="scrapbook-trigger" type="button" data-scrapbook-photo data-photo-title="UBC Farm Fest XC" data-photo-story="Racing cross-country for UBC at the UBC Farm Fest XC race. I am a co-captain for the team." aria-label="View larger photo: racing at the UBC Farm Fest XC race">
+                        <img src="images/running_photo.JPG" alt="Sarah racing in a UBC cross-country singlet at the UBC Farm Fest XC race" loading="lazy">
+                    </button>
+                    <figcaption><span>Also</span><em>Co-captain, XC</em></figcaption>
                 </figure>
             </div>
+            <header class="coop-head">
+                <p class="about-kicker">The jobs</p>
+                <h3>Co-op</h3>
+            </header>
+            <div class="coop-scatter">
+                <svg class="journey" viewBox="0 0 1000 780" preserveAspectRatio="none" aria-hidden="true">
+                    <path class="journey-line" pathLength="1" d="M 290 120 C 450 70 600 80 730 140 C 760 200 620 250 470 300 C 320 350 280 440 310 510 C 350 590 520 660 720 560 C 800 510 640 720 500 750" />
+                    <circle class="journey-dot" r="7" fill="#7c3f2e">
+                        <animateMotion dur="9s" repeatCount="indefinite" path="M 290 120 C 450 70 600 80 730 140 C 760 200 620 250 470 300 C 320 350 280 440 310 510 C 350 590 520 660 720 560 C 800 510 640 720 500 750" />
+                    </circle>
+                </svg>
+                <article class="coop coop-telus">
+                    <p class="coop-when">May – Aug 2026</p>
+                    <h3>TELUS</h3>
+                    <p class="coop-role">Software · Vancouver</p>
+                    <p>A Python and FastAPI app that automates firmware deployments and device-status campaigns over TR-069/USP, plus a CI-to-Jira test pipeline that saves about 7 hours a week.</p>
+                </article>
+                <article class="coop coop-glux">
+                    <p class="coop-when">May – Aug 2025</p>
+                    <h3>Glüxkind</h3>
+                    <p class="coop-role">Embedded systems · Vancouver</p>
+                    <p>Multi-threaded audio in C++ on FreeRTOS, held under 10&nbsp;ms across three ESP32s, and a diagnostic setup that cut debugging cycles by about 75%.</p>
+                </article>
+                <article class="coop coop-dark">
+                    <p class="coop-when">May – Dec 2024</p>
+                    <h3>DarkVision</h3>
+                    <p class="coop-role">Electrical · North Vancouver</p>
+                    <p>Ultrasound firmware in C++ and Python, an Altium noise-reduction board that raised signal strength about 3×, and SPI into downhole hardware.</p>
+                </article>
+                <article class="coop coop-tech">
+                    <p class="coop-when">May – Aug 2023</p>
+                    <h3>TechInsights</h3>
+                    <p class="coop-role">Image processing · Ottawa</p>
+                    <p>Semiconductor images at 4&nbsp;nm, including the Apple A16, and machine learning that shortened the correction and transistor-extraction pass.</p>
+                </article>
+            </div>
+            <div class="about-close">
+                <figure class="scrapbook-photo scrap scrap-ridge scrapbook-coquihalla">
+                    <button class="scrapbook-trigger" type="button" data-scrapbook-photo data-photo-title="Coquihalla / British Columbia" data-photo-story="A day hiking above the clouds in the Coquihalla mountains." aria-label="View larger photo: hiking in the Coquihalla mountains">
+                        <img src="images/coquihalla.jpg" alt="Sarah hiking a rocky ridgeline in the Coquihalla mountains" loading="lazy">
+                    </button>
+                    <figcaption><span>After the work</span><em>Coquihalla</em></figcaption>
+                </figure>
+                <div class="about-close-copy">
+                    <p class="about-kicker">Outside the lab</p>
+                    <h3>Above the clouds</h3>
+                    <p>I'm just as happy working on a new project as I am spending a weekend in the mountains. Running, hiking, skiing, and exploring new places are a big part of my life outside engineering.</p>
+                </div>
+            </div>
+            <p class="about-tools"><span>On the desk</span> C / C++ · Python · FastAPI · FreeRTOS · ROS 2 · Altium · SPI · SystemVerilog · FPGA · ARM · Git</p>
             <dialog class="scrapbook-viewer" aria-labelledby="scrapbook-viewer-title">
                 <button class="scrapbook-viewer-close" type="button" aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button>
                 <figure class="scrapbook-viewer-print">
@@ -76,26 +127,6 @@
                     <figcaption><p class="eyebrow">PHOTO ALBUM</p><h3 id="scrapbook-viewer-title"></h3><p class="scrapbook-viewer-story"></p></figcaption>
                 </figure>
             </dialog>
-            <div class="about-story">
-                <p class="about-lede">I was the kid building legos and minecraft villages and taking electronics apart to see what was inside. These days, that curiosity shows up in firmware, hardware, and whole systems.</p>
-                <p>Through co-op, I’ve worked on production software and embedded systems, designed PCBs for industrial ultrasound hardware, and used machine learning for image analysis.</p>
-                <div class="personal-columns">
-                    <article class="personal-note">
-                        <p class="note-index">UBC VARSITY</p>
-                        <h3>Co-captain.</h3>
-                        <p>I compete in cross-country and track, and co-captain UBC’s cross-country team. It’s taught me to take initiative, work as a team, and show up for the people beside me.</p>
-                    </article>
-                    <article class="personal-note">
-                        <p class="note-index">OUT OF OFFICE</p>
-                        <h3>Find a trail.</h3>
-                        <p>Outside engineering, I like hiking and skiing around BC, finding new places, and spending time outdoors.</p>
-                    </article>
-                </div>
-                <div class="skills-block">
-                    <h3>Things I work with</h3>
-                    <p class="skill-editorial">C / C++ <i>·</i> FreeRTOS <i>·</i> Python <i>·</i> JavaScript <i>·</i> React <i>·</i> SystemVerilog <i>·</i> Embedded systems <i>·</i> Robotics <i>·</i> SQL <i>·</i> Git <i>·</i> AWS <i>·</i> Docker</p>
-                </div>
-            </div>
         </section>
 
         <section class="projects-section" id="explore" aria-labelledby="projects-title">

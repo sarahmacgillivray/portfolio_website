@@ -191,3 +191,10 @@ if (trailRoute && trailMap) {
     window.addEventListener("load", revealTrail, { once: true });
     revealTrail();
 }
+
+const siteHeader = document.querySelector(".site-header");
+if (siteHeader) {
+    const syncHeader = () => siteHeader.classList.toggle("is-scrolled", window.scrollY > 28);
+    syncHeader();
+    window.addEventListener("scroll", syncHeader, { passive: true });
+}
