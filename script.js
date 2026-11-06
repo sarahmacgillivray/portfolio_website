@@ -14,6 +14,25 @@ const fieldSummaries = {
     shell: ["UNIX SYSTEMS", "Processes & job control", "C · POSIX · signals"]
 };
 
+const projectIllustrations = {
+    biomusic: '<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11" stroke-dasharray="1.5 3"/><path d="M4 17h5l2.4-7 4.5 14 4.5-11 2.2 4H28"/><circle class="solid" cx="4" cy="17" r="1.2"/><circle class="solid" cx="28" cy="17" r="1.2"/></svg>',
+    autocar: '<svg viewBox="0 0 32 32"><path d="M10 7.5h12l3 5v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-10l3-5Z"/><path d="m9 13 2-3h10l2 3v5H9zM10 21h.1M22 21h.1M3 12v8M29 12v8"/><path class="solid" d="M11 20a1.4 1.4 0 1 0 0 .1zm10 0a1.4 1.4 0 1 0 0 .1z"/></svg>',
+    os161: '<svg viewBox="0 0 32 32"><path d="M7 7h15v6H7zM10 14h15v6H10zM7 21h15v5H7z"/><path d="M10 10h8M13 17h8M10 23.5h8M24 8h2m-2 9h2m-2 7h2"/></svg>',
+    arc4: '<svg viewBox="0 0 32 32"><rect x="9" y="9" width="14" height="14"/><path d="M12 5v4m4-4v4m4-4v4m-8 14v4m4-4v4m4-4v4M5 12h4m-4 4h4m-4 4h4m14-8h4m-4 4h4m-4 4h4M13 13h6v6h-6z"/><path class="solid" d="M15 15h2v2h-2z"/></svg>',
+    firefighter: '<svg viewBox="0 0 32 32"><path d="M17 4c2 5-2 6 1 9 1-2 3-3 3-6 4 4 6 8 4 13a9 9 0 0 1-18 0c0-4 2-7 6-10 0 4 1 5 2 6 3-3 2-7 2-12Z"/><path d="M14 21h4m-2-2v4"/></svg>',
+    sumo: '<svg viewBox="0 0 32 32"><circle cx="16" cy="17" r="11" stroke-dasharray="2 2"/><path d="M9 10h5v5H9zM18 18h5v5h-5zM14 12l4 4M14 14v-2h-2m4 6 2 2v-2"/><path class="solid" d="M11 12h1v1h-1zm9 8h1v1h-1z"/></svg>',
+    shell: '<svg viewBox="0 0 32 32"><path d="m9 9 7 7-7 7m10 0h6M5 5h22v22H5z"/><path class="solid" d="M20 20h2v2h-2z"/></svg>'
+};
+
+document.querySelectorAll("[data-project-art]").forEach((element) => {
+    element.innerHTML = projectIllustrations[element.dataset.projectArt] ?? "";
+});
+
+const fieldPhotographs = {
+    os161: ["images/os161.jpg", "OS/161 running in the kernel test environment", "KERNEL TEST / OS161"],
+    firefighter: ["images/fire_maze.jpg", "The autonomous firefighter robot navigating its maze", "MAZE TEST / FIREBOT"]
+};
+
 if (fieldNotePanel) {
     const projectDetailsContainer = document.querySelector(".project-details");
     if (projectDetailsContainer) fieldNotePanel.append(projectDetailsContainer);
@@ -27,10 +46,18 @@ projectDetails.forEach((detail) => {
     const summaryElement = document.createElement("div");
     summaryElement.className = "field-summary";
     summaryElement.innerHTML = summary.map((value, index) => {
-        const labels = ["TRAIL NOTE", "TERRAIN", "FIELD KIT"];
+        const labels = ["PROJECT", "FOCUS", "TOOLS"];
         return `<div><span>${labels[index]}</span><strong>${value}</strong></div>`;
     }).join("");
     heading.after(summaryElement);
+
+    const photograph = fieldPhotographs[detail.dataset.project];
+    if (photograph) {
+        const figure = document.createElement("figure");
+        figure.className = `field-photograph field-photograph-${detail.dataset.project}`;
+        figure.innerHTML = `<img src="${photograph[0]}" alt="${photograph[1]}" loading="lazy"><figcaption>${photograph[2]}</figcaption>`;
+        summaryElement.after(figure);
+    }
 });
 
 function closeProjectDetails() {

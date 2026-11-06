@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#17211e">
-    <meta name="description" content="Field notes from Sarah MacGillivray: engineering projects, embedded systems, robotics, and adventures around British Columbia.">
-    <title>FIELD NOTES | Sarah MacGillivray</title>
+    <meta name="description" content="Sarah MacGillivray is a UBC computer engineering student building embedded systems and robotics projects, and exploring British Columbia.">
+    <title>Staying Curious | Sarah MacGillivray</title>
     <link rel="stylesheet" href="styles.css?v=5">
     <link rel="stylesheet" href="field-notes.css?v=6">
-    <script src="script.js?v=6" defer></script>
+    <link rel="stylesheet" href="editorial.css?v=11">
+    <script src="script.js?v=8" defer></script>
 </head>
 <body>
     <header class="site-header">
-        <a class="wordmark" href="#home" aria-label="Sarah MacGillivray, home">FIELD<span> / </span>NOTES</a>
+        <a class="wordmark" href="#home" aria-label="Sarah MacGillivray, home">SARAH<span> / </span>MACGILLIVRAY</a>
         <nav class="site-nav" aria-label="Main navigation">
-            <a href="#explore">Explore</a>
             <a href="#about">About</a>
+            <a href="#explore">Explore</a>
             <a href="#contact">Contact</a>
         </nav>
         <a class="header-link" href="./additional/Sarah_MacGillivray_Resume_September26.pdf" target="_blank" rel="noreferrer">Resume <span aria-hidden="true">↗</span></a>
@@ -23,33 +24,49 @@
 
     <main>
         <section class="hero" id="home" aria-labelledby="hero-title">
-            <div class="hero-shade"></div>
+            <div class="hero-coverline"><span>VANCOUVER · 49° 16′ N / 123° 07′ W</span></div>
             <div class="hero-content">
-                <p class="eyebrow hero-eyebrow"><span class="status-dot"></span> Sarah MacGillivray <span class="hero-location">· Vancouver, BC</span></p>
-                <h1 id="hero-title">Always chasing<br><span>the next summit.</span></h1>
-                <p class="hero-copy">A little bit of engineering, a little bit of adventure, and a lot of curiosity.</p>
-                <div class="hero-actions">
-                    <a class="button button-lime" href="#explore">Explore my trails <span aria-hidden="true">↓</span></a>
-                    <a class="hero-text-link" href="#about">Beyond the trail <span aria-hidden="true">↗</span></a>
-                </div>
+                <p class="eyebrow hero-eyebrow">STAYING CURIOUS</p>
+                <h1 id="hero-title">Sarah<br><span>MacGillivray</span></h1>
+                <p class="hero-copy">I’m a fifth-year Computer Engineering student at UBC, focused on embedded systems and hardware. Outside the lab, I run with UBC's varsity XC/track teams and explore the mountains.</p>
+                <a class="cover-route-link" href="#explore"><span>Follow the project trail</span><span aria-hidden="true">↓</span></a>
             </div>
-            <div class="hero-foot"><span><i class="status-dot"></i> Available for adventure</span><span>49° 16′ N &nbsp; 123° 07′ W</span></div>
+            <figure class="hero-photograph">
+                <img src="images/header.JPG" alt="Two hikers standing on a rocky summit above a lake in the Coast Mountains" fetchpriority="high">
+                <figcaption><span>COAST MOUNTAINS / BC</span><span>Above the treeline, together.</span></figcaption>
+            </figure>
+            <div class="hero-foot"><span>FOCUS / EMBEDDED SYSTEMS</span><span>HARDWARE · FIRMWARE · ROBOTICS</span></div>
         </section>
 
         <section class="about section-wrap" id="about" aria-labelledby="about-title">
-            <div class="section-heading">
-                <p class="eyebrow">FIELD NOTE 01 / THE PERSON BEHIND THE PROJECTS</p>
-                <h2 id="about-title">Beyond<br><span>the trail.</span></h2>
+            <header class="about-heading">
+                <p class="eyebrow">THE PERSON BEHIND THE PROJECTS</p>
+                <h2 id="about-title">Curiosity,<br>in and out<br>of the lab.</h2>
+            </header>
+            <div class="about-collage" aria-label="A few views from the trail and the workbench">
+                <figure class="scrapbook-photo scrapbook-coquihalla"><img src="images/coquihalla.jpg" alt="Sarah hiking a rocky ridgeline in the Coquihalla mountains" loading="lazy"><figcaption><span>COQUIHALLA / BC</span> Above the clouds</figcaption></figure>
+                <figure class="scrapbook-photo scrapbook-running"><img src="images/running_photo.JPG" alt="Sarah racing in a UBC cross-country singlet at the UBC Farm West XC race" loading="lazy"><figcaption><span>UBC FARM WEST XC</span> Cross-country</figcaption></figure>
+                <figure class="scrapbook-photo scrapbook-sumo"><img src="images/sumo.jpg" alt="Close-up of the hand-built autonomous sumo robot" loading="lazy"><figcaption><span>MADE BY HAND</span> Autonomous sumo-bot</figcaption></figure>
+                <figure class="scrapbook-photo scrapbook-car"><img src="images/car_image_visual.jpg" alt="The small autonomous car built for a team robotics competition" loading="lazy"><figcaption><span>ON THE BENCH</span> Team A2 · autonomous car</figcaption></figure>
             </div>
-            <div class="about-copy">
-                <p class="lead">Cross-country runner, mountain enthusiast, coffee drinker, and engineer who likes understanding how things work.</p>
-                <p>As a fourth-year Computer Engineering student at the University of British Columbia, I’ve worked on production systems across firmware, hardware, machine learning, and full-stack development. I enjoy the details: a responsive interface, a reliable protocol, or a system that stays fast under pressure.</p>
-                <p>Outside engineering, I ski and hike around BC and compete in varsity cross-country and track at UBC. As co-captain of UBC's cross-country team, I have learned to lead with initiative, support my teammates, and work toward shared goals. Balancing training with a demanding degree has also taught me to stay focused, adaptable, and steady when the pace picks up.</p>
+            <div class="about-story">
+                <p class="about-lede">I was the kid building legos and minecraft villages and taking electronics apart to see what was inside. These days, that curiosity shows up in firmware, hardware, and whole systems.</p>
+                <p>I’m in my fifth year of Computer Engineering at UBC. Through co-op, I’ve worked on production software and embedded systems, designed PCBs for industrial ultrasound hardware, and used machine learning for image analysis.</p>
+                <div class="personal-columns">
+                    <article class="personal-note">
+                        <p class="note-index">UBC VARSITY</p>
+                        <h3>Co-captain.</h3>
+                        <p>I compete in cross-country and track, and co-captain UBC’s cross-country team. It’s taught me to take initiative, work as a team, and show up for the people beside me.</p>
+                    </article>
+                    <article class="personal-note">
+                        <p class="note-index">OUT OF OFFICE</p>
+                        <h3>Find a trail.</h3>
+                        <p>Outside engineering, I like hiking and skiing around BC, finding new places, and spending time outdoors.</p>
+                    </article>
+                </div>
                 <div class="skills-block">
-                    <h3>Tools I work with</h3>
-                    <ul class="skill-list" aria-label="Technical skills">
-                        <li>C / C++</li><li>FreeRTOS</li><li>Python</li><li>JavaScript</li><li>React</li><li>SystemVerilog</li><li>Embedded systems</li><li>Robotics</li><li>SQL</li><li>Git</li><li>AWS</li><li>Docker</li>
-                    </ul>
+                    <h3>Things I work with</h3>
+                    <p class="skill-editorial">C / C++ <i>·</i> FreeRTOS <i>·</i> Python <i>·</i> JavaScript <i>·</i> React <i>·</i> SystemVerilog <i>·</i> Embedded systems <i>·</i> Robotics <i>·</i> SQL <i>·</i> Git <i>·</i> AWS <i>·</i> Docker</p>
                 </div>
             </div>
         </section>
@@ -58,10 +75,10 @@
             <div class="section-wrap projects-wrap">
                 <div class="projects-heading">
                     <div class="section-heading">
-                        <p class="eyebrow">FIELD MAP / 01—07</p>
-                        <h2 id="projects-title">Explore my <span>trails.</span></h2>
+                        <p class="eyebrow">PROJECT TRAIL</p>
+                        <h2 id="projects-title">Explore my <span>projects</span></h2>
                     </div>
-                    <p class="projects-intro">Each marker leads to a different kind of terrain. Choose a destination to open its field notes.</p>
+                    <p class="projects-intro">Each marker leads to a different kind of terrain. Choose a destination to explore the project.</p>
                 </div>
 
                 <div class="field-map-layout">
@@ -70,7 +87,7 @@
                             <div class="map-topline"><span>COAST MOUNTAIN RANGE <b>·</b> BC</span><span>SELECT A DESTINATION</span></div>
                             <div class="trail-map" id="trail-map" aria-label="Interactive illustrated map of Sarah's engineering projects">
                                 <svg class="terrain-art" viewBox="0 0 1000 680" role="img" aria-labelledby="map-title map-description" preserveAspectRatio="none">
-                                    <title id="map-title">Field map of engineering trails</title>
+                                    <title id="map-title">Trail map of engineering projects</title>
                                     <desc id="map-description">A topographic map with a winding trail connecting seven project destinations through mountain ridges, forest, and a lake.</desc>
                                     <defs>
                                         <pattern id="forest-dots" width="13" height="13" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r="1" fill="#55735d" opacity=".22"/><circle cx="9" cy="10" r="1.2" fill="#55735d" opacity=".16"/></pattern>
@@ -93,31 +110,31 @@
                                     <g fill="none" stroke="#527159" stroke-width="2" opacity=".42"><path d="M60 163 l12 -20 12 20z"/><path d="M82 163 l12 -20 12 20z"/><path d="M908 308 l12 -20 12 20z"/><path d="M930 308 l12 -20 12 20z"/><path d="M952 308 l12 -20 12 20z"/><path d="M310 587 l12 -20 12 20z"/><path d="M332 587 l12 -20 12 20z"/></g>
                                     <path class="route-underlay" d="M226 172 C279 155 284 232 348 220 S405 156 463 182 514 260 590 223 636 131 662 121 733 145 749 208 758 284 783 310 738 367 665 358 594 343 542 379 461 405 424 359 355 321 316 369 242 417 193 479 246 526 314 532 382 507 448 513 514 549 572 544 633 510 688 509 733 468 778 453 824 490 841 548"/>
                                     <path class="route-trail" id="route-trail" pathLength="1" d="M226 172 C279 155 284 232 348 220 S405 156 463 182 514 260 590 223 636 131 662 121 733 145 749 208 758 284 783 310 738 367 665 358 594 343 542 379 461 405 424 359 355 321 316 369 242 417 193 479 246 526 314 532 382 507 448 513 514 549 572 544 633 510 688 509 733 468 778 453 824 490 841 548"/>
-                                    <g class="map-mapinfo" font-family="Source Serif Pro, Georgia, serif" fill="#355840"><text x="37" y="632" font-size="11" font-weight="700" letter-spacing="1">FIELD ROUTE / 07 STOPS</text><text x="915" y="61" font-size="26" font-weight="500">N</text><path d="M927 75 L920 101 L927 96 L934 101Z" fill="#c66545"/></g>
+                                    <g class="map-mapinfo" font-family="Source Serif Pro, Georgia, serif" fill="#355840"><text x="37" y="632" font-size="11" font-weight="700" letter-spacing="1">PROJECT ROUTE</text><text x="915" y="61" font-size="26" font-weight="500">N</text><path d="M927 75 L920 101 L927 96 L934 101Z" fill="#c66545"/></g>
                                 </svg>
-                                <button class="map-marker marker-biomusic" style="--x:22.6%;--y:25.3%" type="button" data-open-project="biomusic" aria-label="Open Biomusic field note" aria-expanded="false"><span class="marker-glyph">✳</span><span class="marker-name">BIO-SIGNAL<br>SUMMIT</span></button>
-                                <button class="map-marker marker-autocar" style="--x:66.2%;--y:17.8%" type="button" data-open-project="autocar" aria-label="Open Autonomous Car field note" aria-expanded="false"><span class="marker-glyph">✳</span><span class="marker-name">AUTONOMY<br>RIDGE</span></button>
-                                <button class="map-marker marker-os161" style="--x:42.4%;--y:52.8%" type="button" data-open-project="os161" aria-label="Open OS161 field note" aria-expanded="false"><span class="marker-glyph">✳</span><span class="marker-name">KERNEL<br>PASS</span></button>
-                                <button class="map-marker marker-arc4" style="--x:78.3%;--y:45.6%" type="button" data-open-project="arc4" aria-label="Open ARC4 field note" aria-expanded="false"><span class="marker-glyph">✳</span><span class="marker-name">LOGIC<br>LOOKOUT</span></button>
-                                <button class="map-marker marker-firefighter" style="--x:19.3%;--y:70.4%" type="button" data-open-project="firefighter" aria-label="Open Firefighter Robot field note" aria-expanded="false"><span class="marker-glyph">✳</span><span class="marker-name">FIRELINE<br>TRAIL</span></button>
-                                <button class="map-marker marker-sumo" style="--x:57.2%;--y:80%" type="button" data-open-project="sumo" aria-label="Open Sumo-Bot field note" aria-expanded="false"><span class="marker-glyph">✳</span><span class="marker-name">SUMO<br>BASIN</span></button>
-                                <button class="map-marker marker-shell" style="--x:84.1%;--y:80.6%" type="button" data-open-project="shell" aria-label="Open UNIX Shell field note" aria-expanded="false"><span class="marker-glyph">✳</span><span class="marker-name">SHELL<br>STATION</span></button>
+                                <button class="map-marker marker-biomusic" style="--x:22.6%;--y:25.3%" type="button" data-open-project="biomusic" aria-label="Open Biomusic project details" aria-expanded="false"><span class="marker-glyph" data-project-art="biomusic" aria-hidden="true"></span><span class="marker-name">BIO-SIGNAL<br>SUMMIT</span></button>
+                                <button class="map-marker marker-autocar" style="--x:66.2%;--y:17.8%" type="button" data-open-project="autocar" aria-label="Open Autonomous Car project details" aria-expanded="false"><span class="marker-glyph" data-project-art="autocar" aria-hidden="true"></span><span class="marker-name">AUTONOMY<br>RIDGE</span></button>
+                                <button class="map-marker marker-os161" style="--x:42.4%;--y:52.8%" type="button" data-open-project="os161" aria-label="Open OS161 project details" aria-expanded="false"><span class="marker-glyph" data-project-art="os161" aria-hidden="true"></span><span class="marker-name">KERNEL<br>PASS</span></button>
+                                <button class="map-marker marker-arc4" style="--x:78.3%;--y:45.6%" type="button" data-open-project="arc4" aria-label="Open ARC4 project details" aria-expanded="false"><span class="marker-glyph" data-project-art="arc4" aria-hidden="true"></span><span class="marker-name">LOGIC<br>LOOKOUT</span></button>
+                                <button class="map-marker marker-firefighter" style="--x:19.3%;--y:70.4%" type="button" data-open-project="firefighter" aria-label="Open Firefighter Robot project details" aria-expanded="false"><span class="marker-glyph" data-project-art="firefighter" aria-hidden="true"></span><span class="marker-name">FIRELINE<br>TRAIL</span></button>
+                                <button class="map-marker marker-sumo" style="--x:57.2%;--y:80%" type="button" data-open-project="sumo" aria-label="Open Sumo-Bot project details" aria-expanded="false"><span class="marker-glyph" data-project-art="sumo" aria-hidden="true"></span><span class="marker-name">SUMO<br>BASIN</span></button>
+                                <button class="map-marker marker-shell" style="--x:84.1%;--y:80.6%" type="button" data-open-project="shell" aria-label="Open UNIX Shell project details" aria-expanded="false"><span class="marker-glyph" data-project-art="shell" aria-hidden="true"></span><span class="marker-name">SHELL<br>STATION</span></button>
                                 <div class="map-scale" aria-hidden="true"><span></span><span>NOT TO SCALE</span></div>
                             </div>
                             <div class="map-bottomline"><span>LOWER MAINLAND / ENGINEERING TERRITORY</span><span>49° 16′ N &nbsp; 123° 07′ W</span></div>
                         </div>
                         <nav class="destination-index" aria-label="Map destinations">
-                            <button type="button" data-open-project="biomusic" aria-expanded="false"><span class="destination-number">01</span><span><strong>Bio-Signal Summit</strong><small>Wireless biosensing</small></span><span class="destination-arrow">↗</span></button>
-                            <button type="button" data-open-project="autocar" aria-expanded="false"><span class="destination-number">02</span><span><strong>Autonomy Ridge</strong><small>ROS 2 · autonomous car</small></span><span class="destination-arrow">↗</span></button>
-                            <button type="button" data-open-project="os161" aria-expanded="false"><span class="destination-number">03</span><span><strong>Kernel Pass</strong><small>OS161 · operating systems</small></span><span class="destination-arrow">↗</span></button>
-                            <button type="button" data-open-project="arc4" aria-expanded="false"><span class="destination-number">04</span><span><strong>Logic Lookout</strong><small>FPGA · SystemVerilog</small></span><span class="destination-arrow">↗</span></button>
-                            <button type="button" data-open-project="firefighter" aria-expanded="false"><span class="destination-number">05</span><span><strong>Fireline Trail</strong><small>Embedded robotics</small></span><span class="destination-arrow">↗</span></button>
-                            <button type="button" data-open-project="sumo" aria-expanded="false"><span class="destination-number">06</span><span><strong>Sumo Basin</strong><small>Autonomous robotics</small></span><span class="destination-arrow">↗</span></button>
-                            <button type="button" data-open-project="shell" aria-expanded="false"><span class="destination-number">07</span><span><strong>Shell Station</strong><small>C · UNIX systems</small></span><span class="destination-arrow">↗</span></button>
+                            <button type="button" data-open-project="biomusic" aria-expanded="false"><span class="destination-number">01</span><span class="destination-art" data-project-art="biomusic" aria-hidden="true"></span><span><strong>Bio-Signal Summit</strong><small>Wireless biosensing</small></span><span class="destination-arrow">↗</span></button>
+                            <button type="button" data-open-project="autocar" aria-expanded="false"><span class="destination-number">02</span><span class="destination-art" data-project-art="autocar" aria-hidden="true"></span><span><strong>Autonomy Ridge</strong><small>ROS 2 · autonomous car</small></span><span class="destination-arrow">↗</span></button>
+                            <button type="button" data-open-project="os161" aria-expanded="false"><span class="destination-number">03</span><span class="destination-art" data-project-art="os161" aria-hidden="true"></span><span><strong>Kernel Pass</strong><small>OS161 · operating systems</small></span><span class="destination-arrow">↗</span></button>
+                            <button type="button" data-open-project="arc4" aria-expanded="false"><span class="destination-number">04</span><span class="destination-art" data-project-art="arc4" aria-hidden="true"></span><span><strong>Logic Lookout</strong><small>FPGA · SystemVerilog</small></span><span class="destination-arrow">↗</span></button>
+                            <button type="button" data-open-project="firefighter" aria-expanded="false"><span class="destination-number">05</span><span class="destination-art" data-project-art="firefighter" aria-hidden="true"></span><span><strong>Fireline Trail</strong><small>Embedded robotics</small></span><span class="destination-arrow">↗</span></button>
+                            <button type="button" data-open-project="sumo" aria-expanded="false"><span class="destination-number">06</span><span class="destination-art" data-project-art="sumo" aria-hidden="true"></span><span><strong>Sumo Basin</strong><small>Autonomous robotics</small></span><span class="destination-arrow">↗</span></button>
+                            <button type="button" data-open-project="shell" aria-expanded="false"><span class="destination-number">07</span><span class="destination-art" data-project-art="shell" aria-hidden="true"></span><span><strong>Shell Station</strong><small>C · UNIX systems</small></span><span class="destination-arrow">↗</span></button>
                         </nav>
                     </div>
-                    <aside class="field-note-panel" id="field-note-panel" aria-live="polite" aria-label="Selected destination field notes">
-                        <div class="field-note-empty"><span class="empty-compass" aria-hidden="true">✳</span><p class="eyebrow">YOUR FIELD NOTES</p><h3>Pick a point<br>on the map.</h3><p>Every marker opens a closer look at the project, the tools, and the thinking behind it.</p><div class="empty-coordinates">START ANYWHERE <span>↗</span></div></div>
+                    <aside class="field-note-panel" id="field-note-panel" aria-live="polite" aria-label="Selected project details">
+                        <div class="field-note-empty"><span class="empty-compass" aria-hidden="true">✳</span><p class="eyebrow">PROJECT INDEX</p><h3>Pick a point<br>on the map.</h3><p>Choose a project to see what I built, what I learned, and the tools behind it.</p><div class="empty-coordinates">START ANYWHERE <span>↗</span></div></div>
                     </aside>
                 </div>
 
@@ -160,7 +177,7 @@
         </section>
 
         <section class="contact section-wrap" id="contact" aria-labelledby="contact-title">
-            <div class="contact-copy"><p class="eyebrow">03 / Say hello</p><h2 id="contact-title">Have a good<br><span>problem to solve?</span></h2><p>I’m open to new opportunities and collaborations.</p></div>
+            <div class="contact-copy"><p class="eyebrow">Contact</p><h2 id="contact-title">Have a good<br><span>problem to solve?</span></h2><p>I’m open to new opportunities and collaborations.</p></div>
             <div class="contact-links"><a href="mailto:smacg04@gmail.com">Email <span aria-hidden="true">↗</span></a><a href="https://github.com/sarahmacgillivray" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/sarahmacgillivraylinked" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="./additional/Sarah_MacGillivray_Resume_September26.pdf" target="_blank" rel="noreferrer">Resume <span aria-hidden="true">↗</span></a></div>
         </section>
     </main>
