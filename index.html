@@ -3,774 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarah MacGillivray - Software Engineer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #e8f1f8;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 1rem;
-        }
-
-        nav a {
-            color: #333;
-            text-decoration: none;
-            padding: 0.5rem 1.5rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #062d16;
-        }
-
-        section {
-            padding: 3rem 2rem;
-            width: 100%;
-        }
-
-        .hero {
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-image: url('images/header.JPG');
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            left: 0;
-            top: 0;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .typing-text {
-            display: inline-block;
-            border-right: 3px solid white;
-            animation: type 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-            white-space: nowrap;
-            overflow: hidden;
-            min-height: 1.2em;
-        }
-
-        @keyframes type {
-            0% {
-                width: 0;
-            }
-            100% {
-                width: 100%;
-            }
-        }
-
-        @keyframes blink-caret {
-            0%, 49% {
-                border-right-color: white;
-            }
-            50%, 100% {
-                border-right-color: transparent;
-            }
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.2s backwards;
-            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero .cta {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: white;
-            color: #0c4121;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 1s ease 0.4s backwards;
-        }
-
-        .hero .cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: #333;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .skill-tag {
-            background: #f0f0f0;
-            padding: 0.75rem;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .skill-tag:hover {
-            background: #0c4121;
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .project-card {
-            background: #1a3a52;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .project-img {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #0c4121 0%, #1e8449 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-            color: white;
-        }
-
-        .project-content p {
-            color: #e0e0e0;
-        }
-
-        .project-content h3 {
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .project-links a {
-            color: #64b5f6;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .project-detail {
-            display: none;
-            background: #f9f9f9;
-            padding: 3rem 2rem;
-            margin-top: 2rem;
-            border-radius: 12px;
-        }
-
-        .project-detail.active {
-            display: block;
-        }
-
-        .project-detail-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .close-btn {
-            background: #0c4121;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .close-btn:hover {
-            background: #062d16;
-        }
-
-        .project-detail h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .project-detail-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .project-detail-content p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .project-tech-stack {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #0c4121;
-        }
-
-        .project-tech-stack h4 {
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .tech-list {
-            list-style: none;
-        }
-
-        .tech-list li {
-            padding: 0.5rem 0;
-            color: #666;
-        }
-
-        .tech-list li:before {
-            content: "✓ ";
-            color: #0c4121;
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-
-        .contact {
-            background: #f9f9f9;
-            text-align: center;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .contact-links a {
-            color: #333;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-
-        .contact-links a:hover {
-            color: #0c4121;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-            }
-        }
-    </style>
+    <meta name="theme-color" content="#17211e">
+    <meta name="description" content="Sarah MacGillivray is a UBC computer engineering student building embedded systems and robotics projects, and exploring British Columbia.">
+    <title>Staying Curious | Sarah MacGillivray</title>
+    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="field-notes.css?v=6">
+    <link rel="stylesheet" href="editorial.css?v=11">
+    <script src="script.js?v=8" defer></script>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header class="site-header">
+        <a class="wordmark" href="#home" aria-label="Sarah MacGillivray, home">SARAH<span> / </span>MACGILLIVRAY</a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#explore">Explore</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a class="header-link" href="./additional/Sarah_MacGillivray_Resume_September26.pdf" target="_blank" rel="noreferrer">Resume <span aria-hidden="true">↗</span></a>
+    </header>
 
-    <section id="home" class="hero">
-        <h1><span class="typing-text">Sarah MacGillivray</span></h1>
-        <p>Computer Engineering Student | Software Developer</p>
-        <a href="#projects" class="cta">View My Work</a>
-    </section>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <div>
-                <p>
-                Looking for a dynamic, committed, high-achieving engineer? That’s me! As a fourth year Computer Engineer at the University of British Columbia, 
-                I've learned a lot about what brought my passion of creating.
-                I’ve always loved building and understanding how things work, from creating elaborate snow forts to withstand neighbourhood "attacks" and building structures in Minecraft
-                out of glass, iron, and cobblestone, to taking apart electronics and eventually creating Arduino and Raspberry Pi projects. 
-                That curiosity naturally evolved into a passion for full stack development and system design.
-            </p>
-
-            <p style="margin-top: 1rem;">
-                Through my co-op experiences, I’ve worked on real-world, production-level systems at the intersection of hardware and 
-                software. My experience includes architecting low-latency, multi-threaded firmware on FreeRTOS, developing firmware 
-                and PCB designs for industrial ultrasound hardware, and applying machine learning techniques to semiconductor image
-                analysis. I specialize in embedded systems, full stack apps, performance-critical C++ applications, real-time systems, 
-                and hardware interfacing using SPI and I2C.
-            </p>
-
-            <p style="margin-top: 1rem;">
-                Outside of engineering, I’m an avid outdoor enthusiast who loves skiing and hiking around British Columbia. I’m also 
-                a varsity cross-country and track athlete at UBC. Competing at a high level alongside a demanding
-                engineering program has shaped my discipline, resilience, and time-management skills, allowing me to consistently
-                perform in fast-paced, high-expectation environments.
-            </p>
+    <main>
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-coverline"><span>VANCOUVER · 49° 16′ N / 123° 07′ W</span></div>
+            <div class="hero-content">
+                <p class="eyebrow hero-eyebrow">STAYING CURIOUS</p>
+                <h1 id="hero-title">Sarah<br><span>MacGillivray</span></h1>
+                <p class="hero-copy">I’m a fifth-year Computer Engineering student at UBC, focused on embedded systems and hardware. Outside the lab, I run with UBC's varsity XC/track teams and explore the mountains.</p>
+                <a class="cover-route-link" href="#explore"><span>Follow the project trail</span><span aria-hidden="true">↓</span></a>
             </div>
-            <div>
-                <h3 style="margin-bottom: 1rem;">Technical Skills</h3>
-                <div class="skills">
-                    <div class="skill-tag">JavaScript</div>
-                    <div class="skill-tag">C++/C</div>
-                    <div class="skill-tag">FreeRTOS Development</div>
-                    <div class="skill-tag">Python</div>
-                    <div class="skill-tag">React</div>
-                    <div class="skill-tag">Robotics</div>
-                    <div class="skill-tag">SQL</div>
-                    <div class="skill-tag">Git</div>
-                    <div class="skill-tag">AWS</div>
-                    <div class="skill-tag">Docker</div>
-                    <div class="skill-tag">Embedded Programming</div>
-                    <div class="skill-tag">Verilog/System Verilog</div>
+            <figure class="hero-photograph">
+                <img src="images/header.JPG" alt="Two hikers standing on a rocky summit above a lake in the Coast Mountains" fetchpriority="high">
+                <figcaption><span>COAST MOUNTAINS / BC</span><span>Above the treeline, together.</span></figcaption>
+            </figure>
+            <div class="hero-foot"><span>FOCUS / EMBEDDED SYSTEMS</span><span>HARDWARE · FIRMWARE · ROBOTICS</span></div>
+        </section>
 
+        <section class="about section-wrap" id="about" aria-labelledby="about-title">
+            <header class="about-heading">
+                <p class="eyebrow">THE PERSON BEHIND THE PROJECTS</p>
+                <h2 id="about-title">Curiosity,<br>in and out<br>of the lab.</h2>
+            </header>
+            <div class="about-collage" aria-label="A few views from the trail and the workbench">
+                <figure class="scrapbook-photo scrapbook-coquihalla"><img src="images/coquihalla.jpg" alt="Sarah hiking a rocky ridgeline in the Coquihalla mountains" loading="lazy"><figcaption><span>COQUIHALLA / BC</span> Above the clouds</figcaption></figure>
+                <figure class="scrapbook-photo scrapbook-running"><img src="images/running_photo.JPG" alt="Sarah racing in a UBC cross-country singlet at the UBC Farm West XC race" loading="lazy"><figcaption><span>UBC FARM WEST XC</span> Cross-country</figcaption></figure>
+                <figure class="scrapbook-photo scrapbook-sumo"><img src="images/sumo.jpg" alt="Close-up of the hand-built autonomous sumo robot" loading="lazy"><figcaption><span>MADE BY HAND</span> Autonomous sumo-bot</figcaption></figure>
+                <figure class="scrapbook-photo scrapbook-car"><img src="images/car_image_visual.jpg" alt="The small autonomous car built for a team robotics competition" loading="lazy"><figcaption><span>ON THE BENCH</span> Team A2 · autonomous car</figcaption></figure>
+            </div>
+            <div class="about-story">
+                <p class="about-lede">I was the kid building legos and minecraft villages and taking electronics apart to see what was inside. These days, that curiosity shows up in firmware, hardware, and whole systems.</p>
+                <p>I’m in my fifth year of Computer Engineering at UBC. Through co-op, I’ve worked on production software and embedded systems, designed PCBs for industrial ultrasound hardware, and used machine learning for image analysis.</p>
+                <div class="personal-columns">
+                    <article class="personal-note">
+                        <p class="note-index">UBC VARSITY</p>
+                        <h3>Co-captain.</h3>
+                        <p>I compete in cross-country and track, and co-captain UBC’s cross-country team. It’s taught me to take initiative, work as a team, and show up for the people beside me.</p>
+                    </article>
+                    <article class="personal-note">
+                        <p class="note-index">OUT OF OFFICE</p>
+                        <h3>Find a trail.</h3>
+                        <p>Outside engineering, I like hiking and skiing around BC, finding new places, and spending time outdoors.</p>
+                    </article>
+                </div>
+                <div class="skills-block">
+                    <h3>Things I work with</h3>
+                    <p class="skill-editorial">C / C++ <i>·</i> FreeRTOS <i>·</i> Python <i>·</i> JavaScript <i>·</i> React <i>·</i> SystemVerilog <i>·</i> Embedded systems <i>·</i> Robotics <i>·</i> SQL <i>·</i> Git <i>·</i> AWS <i>·</i> Docker</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 2rem; font-style: italic;">Click on any project card for more details</p>
-        <div class="projects">
-            <div class="project-card" onclick="toggleDetail(0)">
-                <div class="project-img" style="background: url('images/strava_logo_icon_147232.png') center/cover no-repeat; background-color: #0c4121;"></div>
-                <div class="project-content">
-                    <h3>Strava-Inspired Fitness App</h3>
-                    <p style="color: #a7c6b3; font-weight: bold; margin-bottom: 0.5rem;">🚧 Work in Progress</p>
-                    <p>A fitness tracking application featuring GPS route mapping, character selection, and audio effects for an immersive exercise experience.</p>
-                </div>
-            </div>
-
-            <div class="project-card" onclick="toggleDetail(1)">
-                <div class="project-img" style="background: url('images/os161.jpg') center/cover no-repeat; background-color: #0c4121;"></div>
-                <div class="project-content">
-                    <h3>OS161 Operating System Development</h3>
-                    <p>A multi-month intensive project building a functional Unix-like kernel from scratch, covering synchronization, system calls, and virtual memory.</p>
-                </div>
-            </div>
-
-            <div class="project-card" onclick="toggleDetail(2)">
-                <div class="project-img" style="background: url('images/ModelSim_arc4.jpg') center/cover no-repeat; background-color: #0c4121;"></div>
-                <div class="project-content">
-                    <h3>ARC4 Hardware Decryptor & Parallel Cracker</h3>
-                    <p>Built an FPGA-based ARC4 cipher system in SystemVerilog with decryption, brute-force key cracking,
-                         and parallelized cryptanalysis, using on-chip memory and a ready-enable protocol.</p>
-                </div>
-            </div>
-
-            <div class="project-card" onclick="toggleDetail(3)">
-                <div class="project-img" style="background: url('images/fire_flame.jpg') center/cover no-repeat; background-color: #0c4121;"></div>
-                <div class="project-content">
-                    <h3>Autonomous Firefighter Robot</h3>
-                    <p>Built an autonomous robot that navigates a maze, detects an open flame, and extinguishes it using onboard sensors and control logic.</p>
-                </div>
-            </div>
-
-            <div class="project-card" onclick="toggleDetail(4)">
-                <div class="project-img" style="background: url('images/sumo.jpg') center/cover no-repeat; background-color: #0c4121;"></div>
-                <div class="project-content">
-                    <h3>Autonomous Sumo-Bot Robot</h3>
-                    <p>Designed and built a fully autonomous sumo robot using infrared sensing and edge detection to locate, charge, and push opponents out of the ring.</p>
-                </div>
-            </div>
-
-            <div class="project-card" onclick="toggleDetail(5)">
-                <div class="project-img" style="background: url('images/crash_shell.jpg') center/cover no-repeat; background-color: #0c4121;"></div>
-                <div class="project-content">
-                    <h3>UNIX Shell Implementation</h3>
-                    <p>Implemented a UNIX-like shell in C supporting job control, signal handling, foreground/background execution, and process management.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Details Sections -->
-        <div class="project-detail" id="detail-0">
-            <div class="project-detail-header">
-                <h3>Strava-Inspired Fitness App</h3>
-                <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
-            </div>
-            <div class="project-detail-content">
-                <div>
-                    <p><strong>Project Overview:</strong></p>
-                    <p>This project is a fitness tracking application inspired by Strava, featuring GPS route mapping, character selection, and audio effects. Users can track their activities, choose characters, and enjoy immersive audio experiences while exercising.</p>
-                    <p><strong>Key Features:</strong></p>
-                    <ul style="margin-left: 1.5rem;">
-                        <li>GPS Route Mapping: Visualize your route on a map using the Google Maps API</li>
-                        <li>Character Selection: Choose your character from a variety of options</li>
-                        <li>Audio Effects: Experience sound effects that enhance the activity tracking experience</li>
-                        <li>Activity Tracking: Track distance, speed, and duration of your workouts</li>
-                        <li>Responsive Design: Works seamlessly on desktop and mobile devices</li>
-                    </ul>
-                </div>
-                <div class="project-tech-stack">
-                    <h4>Technology Stack</h4>
-                    <ul class="tech-list">
-                        <li>React with TypeScript</li>
-                        <li>Google Maps API</li>
-                        <li>Web Audio API</li>
-                        <li>Node.js Backend</li>
-                        <li>Firebase for Data Storage</li>
-                        <li>Tailwind CSS</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-detail" id="detail-1">
-            <div class="project-detail-header">
-                <h3>OS161 Operating System Development</h3>
-                <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
-            </div>
-            <div class="project-detail-content">
-                <div>
-                    <p><strong>Project Overview:</strong></p>
-                    <p>I designed and implemented core kernel subsystems for OS161, a simplified educational operating system. 
-                        This project involved transitioning from a limited, single-tasking kernel to a robust, multi-process 
-                        system with full virtual memory support.</p>
-                    
-                    <p><strong>Major Milestones:</strong></p>
-                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
-                        <li><strong>Synchronization Primitives:</strong> Implemented blocking locks and condition 
-                            variables using hardware-level atomic instructions to ensure thread safety.</li>
-                        <li><strong>File System Interface:</strong> Built the system call layer for file 
-                            I/O (open, read, write, lseek) utilizing the Virtual File System (VFS) and safe kernel/user-land memory copying.</li>
-                        <li><strong>Process Management:</strong> Developed <code>fork()</code> and <code>execv()</code> 
-                            mechanisms, establishing process abstractions and protection boundaries.</li>
-                        <li><strong>Virtual Memory:</strong> Engineered a full VM system including TLB fault handling, 
-                            demand-paged memory, and multi-level page tables.</li>
-                    </ul>
-                </div>
-                <div class="project-tech-stack">
-                    <h4>Learning Outcomes</h4>
-                    <ul class="tech-list">
-                        <li>Kernel-level C</li>
-                        <li>GDB Debugging</li>
-                        <li>Concurrency Control</li>
-                        <li>Memory Management</li>
-                        <li>TLB & Paging</li>
-                        <li>System Call Design</li>
-                        <li>Git Version Control</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-detail" id="detail-2">
-            <div class="project-detail-header">
-                <h3>ARC4 Hardware Decryptor & Parallel Cracker</h3>
-                <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
-            </div>
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <a href="videos/decrypt.mp4" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0c4121; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.3s;">Watch Demo Video →</a>
-            </div>
-            <div class="project-detail-content">
-                <div>
-                    <p><strong>Project Overview:</strong></p>
-                    <p>Designed and implemented a complete ARC4 stream cipher system in SystemVerilog on an FPGA, including decryption,
-                        brute-force key cracking, and parallelized cryptanalysis. The design leveraged multiple on-chip SRAM blocks, a 
-                        ready-enable microprotocol for variable-latency modules, and a modular hardware architecture to support scalability
-                         and correctness.
-
-                        The project was built incrementally, starting with ARC4 state initialization and key scheduling,
-                         followed by pseudo-random keystream generation and ciphertext decryption using length-prefixed
-                          messages stored in on-chip memory. I then extended the system to brute-force unknown encryption
-                           keys by detecting valid ASCII plaintext, and finally implemented a parallel cracking architecture
-                            that split the key space across multiple decryption cores to achieve near-2× speedup.
-
-                        Throughout the project, I emphasized correctness, testability, and hardware realism, writing 
-                        comprehensive RTL and post-synthesis testbenches, validating memory contents in simulation and 
-                        on physical hardware, and adhering strictly to synthesis-safe design constraints.</p>
-                    <p><strong>Key Features:</strong></p>
-                    <ul style="margin-left: 1.5rem;">
-                        <li>ARC4 state initialization and key scheduling</li>
-                        <li>Pseudo-random keystream generation and decryption</li>
-                        <li>Brute-force key cracking with ASCII validation</li>
-                        <li>Parallelized decryption for faster key search</li>
-                        <li>On-chip memory management and ready-enable microprotocol</li>
-                        <li>RTL and post-synthesis testbench validation</li>
-                    </ul>
-                </div>
-                <div class="project-tech-stack">
-                    <h4>Technology Stack</h4>
-                    <ul class="tech-list">
-                        <li>SystemVerilog & FPGA design</li>
-                        <li>Digital logic & RTL design</li>
-                        <li>On-chip memory management (SRAM)</li>
-                        <li>Parallel hardware architecture</li>
-                        <li>Microprotocol design for variable-latency modules</li>
-                        <li>Testbench creation & hardware verification</li>
-                        <li>Python for simulation, analysis, and automation</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-detail" id="detail-3">
-            <div class="project-detail-header">
-                <h3>Autonomous Firefighter Robot</h3>
-                <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
-            </div>
-            <div class="project-detail-content">
-                <div>
-                    <p><strong>Project Overview:</strong></p>
-                    <p>
-                    Designed and implemented a fully autonomous firefighter robot capable of navigating a walled maze, detecting an open flame, and extinguishing it using an onboard fan. The robot combined sensor-based navigation, real-time decision-making, and environmental feedback, and was the only robot to successfully complete both challenge mazes.
-                    </p>
-
-                    <p><strong>Key Features:</strong></p>
-                    <ul style="margin-left: 1.5rem;">
-                        <li>Autonomous maze navigation using dual ultrasonic sensors</li>
-                        <li>Infrared flame detection and localization</li>
-                        <li>Automated fire suppression using onboard fan</li>
-                        <li>Real-time sensor data display on LCD</li>
-                        <li>Robust control logic enabling full challenge completion</li>
-                    </ul>
+        <section class="projects-section" id="explore" aria-labelledby="projects-title">
+            <div class="section-wrap projects-wrap">
+                <div class="projects-heading">
+                    <div class="section-heading">
+                        <p class="eyebrow">PROJECT TRAIL</p>
+                        <h2 id="projects-title">Explore my <span>projects</span></h2>
+                    </div>
+                    <p class="projects-intro">Each marker leads to a different kind of terrain. Choose a destination to explore the project.</p>
                 </div>
 
-                <div class="project-tech-stack">
-                    <h4>Technology Stack</h4>
-                    <ul class="tech-list">
-                        <li>BASIC programming language</li>
-                        <li>Ultrasonic distance sensors</li>
-                        <li>Infrared flame sensor</li>
-                        <li>LCD display integration</li>
-                        <li>Embedded robotics & autonomous navigation</li>
-                    </ul>
+                <div class="field-map-layout">
+                    <div class="map-column">
+                        <div class="map-frame">
+                            <div class="map-topline"><span>COAST MOUNTAIN RANGE <b>·</b> BC</span><span>SELECT A DESTINATION</span></div>
+                            <div class="trail-map" id="trail-map" aria-label="Interactive illustrated map of Sarah's engineering projects">
+                                <svg class="terrain-art" viewBox="0 0 1000 680" role="img" aria-labelledby="map-title map-description" preserveAspectRatio="none">
+                                    <title id="map-title">Trail map of engineering projects</title>
+                                    <desc id="map-description">A topographic map with a winding trail connecting seven project destinations through mountain ridges, forest, and a lake.</desc>
+                                    <defs>
+                                        <pattern id="forest-dots" width="13" height="13" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r="1" fill="#55735d" opacity=".22"/><circle cx="9" cy="10" r="1.2" fill="#55735d" opacity=".16"/></pattern>
+                                        <pattern id="water-lines" width="22" height="12" patternUnits="userSpaceOnUse"><path d="M0 6 Q5 2 11 6 T22 6" fill="none" stroke="#548da0" stroke-width=".8" opacity=".42"/></pattern>
+                                    </defs>
+                                    <rect width="1000" height="680" fill="#dce6d9"/>
+                                    <rect width="1000" height="680" fill="url(#forest-dots)"/>
+                                    <g class="contour-lines" fill="none" stroke="#728c72" stroke-width="1.15" opacity=".48">
+                                        <path d="M-40 83 C75 19 135 48 218 30 S374 2 431 67 559 122 651 62 818 9 1040 75"/><path d="M-35 104 C64 49 143 71 224 53 S363 29 418 87 548 147 647 84 831 36 1031 99"/><path d="M-20 130 C69 80 152 98 229 79 S351 58 405 108 540 170 645 108 838 62 1021 127"/>
+                                        <path d="M-50 260 C40 192 147 202 205 247 S326 311 409 253 556 199 625 246 776 322 843 264 959 195 1045 235"/><path d="M-43 282 C51 220 145 225 198 266 S322 334 410 276 552 221 620 266 774 347 849 285 960 216 1038 257"/><path d="M-31 306 C59 246 142 251 192 290 S316 359 409 302 549 245 615 288 770 370 855 310 961 239 1028 278"/>
+                                        <path d="M-35 444 C46 394 138 384 218 422 S343 487 421 434 553 374 630 416 752 478 834 435 966 377 1036 417"/><path d="M-28 468 C51 419 139 410 215 446 S339 512 421 459 553 399 626 440 751 503 838 459 966 401 1029 440"/><path d="M-18 491 C57 444 139 435 210 470 S334 537 420 484 553 423 622 463 750 527 842 483 966 426 1022 463"/>
+                                        <path d="M80 565 C126 514 196 510 242 540 S314 600 369 565 474 520 520 552 586 616 645 577 745 526 808 555 906 604 975 555"/><path d="M88 588 C133 541 197 534 239 563 S313 624 371 589 473 544 517 574 586 640 649 600 746 549 806 579 904 628 969 579"/>
+                                        <path d="M681 181 C723 144 778 149 809 181 S849 233 890 211 955 169 1007 196"/><path d="M683 205 C728 169 777 173 805 203 S847 256 893 234 958 192 1011 218"/><path d="M689 229 C732 193 776 196 801 225 S846 279 896 257 961 216 1015 241"/>
+                                    </g>
+                                    <path d="M806 380 C862 350 900 357 939 393 C974 425 985 478 1030 500 L1030 710 L720 710 C744 655 707 618 741 574 C771 535 746 483 770 443 C783 421 779 395 806 380Z" fill="#a8c9ce"/>
+                                    <path d="M806 380 C862 350 900 357 939 393 C974 425 985 478 1030 500 L1030 710 L720 710 C744 655 707 618 741 574 C771 535 746 483 770 443 C783 421 779 395 806 380Z" fill="url(#water-lines)"/>
+                                    <g class="map-landmarks" fill="#355840" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" letter-spacing="1.5">
+                                        <text x="88" y="137">NORTH RIDGE</text><text x="472" y="118">EAGLE PASS</text><text x="79" y="410">MOSSY SADDLE</text><text x="818" y="467" fill="#3d7584">BLUEBIRD LAKE</text>
+                                    </g>
+                                    <g fill="none" stroke="#527159" stroke-width="2" opacity=".42"><path d="M60 163 l12 -20 12 20z"/><path d="M82 163 l12 -20 12 20z"/><path d="M908 308 l12 -20 12 20z"/><path d="M930 308 l12 -20 12 20z"/><path d="M952 308 l12 -20 12 20z"/><path d="M310 587 l12 -20 12 20z"/><path d="M332 587 l12 -20 12 20z"/></g>
+                                    <path class="route-underlay" d="M226 172 C279 155 284 232 348 220 S405 156 463 182 514 260 590 223 636 131 662 121 733 145 749 208 758 284 783 310 738 367 665 358 594 343 542 379 461 405 424 359 355 321 316 369 242 417 193 479 246 526 314 532 382 507 448 513 514 549 572 544 633 510 688 509 733 468 778 453 824 490 841 548"/>
+                                    <path class="route-trail" id="route-trail" pathLength="1" d="M226 172 C279 155 284 232 348 220 S405 156 463 182 514 260 590 223 636 131 662 121 733 145 749 208 758 284 783 310 738 367 665 358 594 343 542 379 461 405 424 359 355 321 316 369 242 417 193 479 246 526 314 532 382 507 448 513 514 549 572 544 633 510 688 509 733 468 778 453 824 490 841 548"/>
+                                    <g class="map-mapinfo" font-family="Source Serif Pro, Georgia, serif" fill="#355840"><text x="37" y="632" font-size="11" font-weight="700" letter-spacing="1">PROJECT ROUTE</text><text x="915" y="61" font-size="26" font-weight="500">N</text><path d="M927 75 L920 101 L927 96 L934 101Z" fill="#c66545"/></g>
+                                </svg>
+                                <button class="map-marker marker-biomusic" style="--x:22.6%;--y:25.3%" type="button" data-open-project="biomusic" aria-label="Open Biomusic project details" aria-expanded="false"><span class="marker-glyph" data-project-art="biomusic" aria-hidden="true"></span><span class="marker-name">BIO-SIGNAL<br>SUMMIT</span></button>
+                                <button class="map-marker marker-autocar" style="--x:66.2%;--y:17.8%" type="button" data-open-project="autocar" aria-label="Open Autonomous Car project details" aria-expanded="false"><span class="marker-glyph" data-project-art="autocar" aria-hidden="true"></span><span class="marker-name">AUTONOMY<br>RIDGE</span></button>
+                                <button class="map-marker marker-os161" style="--x:42.4%;--y:52.8%" type="button" data-open-project="os161" aria-label="Open OS161 project details" aria-expanded="false"><span class="marker-glyph" data-project-art="os161" aria-hidden="true"></span><span class="marker-name">KERNEL<br>PASS</span></button>
+                                <button class="map-marker marker-arc4" style="--x:78.3%;--y:45.6%" type="button" data-open-project="arc4" aria-label="Open ARC4 project details" aria-expanded="false"><span class="marker-glyph" data-project-art="arc4" aria-hidden="true"></span><span class="marker-name">LOGIC<br>LOOKOUT</span></button>
+                                <button class="map-marker marker-firefighter" style="--x:19.3%;--y:70.4%" type="button" data-open-project="firefighter" aria-label="Open Firefighter Robot project details" aria-expanded="false"><span class="marker-glyph" data-project-art="firefighter" aria-hidden="true"></span><span class="marker-name">FIRELINE<br>TRAIL</span></button>
+                                <button class="map-marker marker-sumo" style="--x:57.2%;--y:80%" type="button" data-open-project="sumo" aria-label="Open Sumo-Bot project details" aria-expanded="false"><span class="marker-glyph" data-project-art="sumo" aria-hidden="true"></span><span class="marker-name">SUMO<br>BASIN</span></button>
+                                <button class="map-marker marker-shell" style="--x:84.1%;--y:80.6%" type="button" data-open-project="shell" aria-label="Open UNIX Shell project details" aria-expanded="false"><span class="marker-glyph" data-project-art="shell" aria-hidden="true"></span><span class="marker-name">SHELL<br>STATION</span></button>
+                                <div class="map-scale" aria-hidden="true"><span></span><span>NOT TO SCALE</span></div>
+                            </div>
+                            <div class="map-bottomline"><span>LOWER MAINLAND / ENGINEERING TERRITORY</span><span>49° 16′ N &nbsp; 123° 07′ W</span></div>
+                        </div>
+                        <nav class="destination-index" aria-label="Map destinations">
+                            <button type="button" data-open-project="biomusic" aria-expanded="false"><span class="destination-number">01</span><span class="destination-art" data-project-art="biomusic" aria-hidden="true"></span><span><strong>Bio-Signal Summit</strong><small>Wireless biosensing</small></span><span class="destination-arrow">↗</span></button>
+                            <button type="button" data-open-project="autocar" aria-expanded="false"><span class="destination-number">02</span><span class="destination-art" data-project-art="autocar" aria-hidden="true"></span><span><strong>Autonomy Ridge</strong><small>ROS 2 · autonomous car</small></span><span class="destination-arrow">↗</span></button>
+                            <button type="button" data-open-project="os161" aria-expanded="false"><span class="destination-number">03</span><span class="destination-art" data-project-art="os161" aria-hidden="true"></span><span><strong>Kernel Pass</strong><small>OS161 · operating systems</small></span><span class="destination-arrow">↗</span></button>
+                            <button type="button" data-open-project="arc4" aria-expanded="false"><span class="destination-number">04</span><span class="destination-art" data-project-art="arc4" aria-hidden="true"></span><span><strong>Logic Lookout</strong><small>FPGA · SystemVerilog</small></span><span class="destination-arrow">↗</span></button>
+                            <button type="button" data-open-project="firefighter" aria-expanded="false"><span class="destination-number">05</span><span class="destination-art" data-project-art="firefighter" aria-hidden="true"></span><span><strong>Fireline Trail</strong><small>Embedded robotics</small></span><span class="destination-arrow">↗</span></button>
+                            <button type="button" data-open-project="sumo" aria-expanded="false"><span class="destination-number">06</span><span class="destination-art" data-project-art="sumo" aria-hidden="true"></span><span><strong>Sumo Basin</strong><small>Autonomous robotics</small></span><span class="destination-arrow">↗</span></button>
+                            <button type="button" data-open-project="shell" aria-expanded="false"><span class="destination-number">07</span><span class="destination-art" data-project-art="shell" aria-hidden="true"></span><span><strong>Shell Station</strong><small>C · UNIX systems</small></span><span class="destination-arrow">↗</span></button>
+                        </nav>
+                    </div>
+                    <aside class="field-note-panel" id="field-note-panel" aria-live="polite" aria-label="Selected project details">
+                        <div class="field-note-empty"><span class="empty-compass" aria-hidden="true">✳</span><p class="eyebrow">PROJECT INDEX</p><h3>Pick a point<br>on the map.</h3><p>Choose a project to see what I built, what I learned, and the tools behind it.</p><div class="empty-coordinates">START ANYWHERE <span>↗</span></div></div>
+                    </aside>
+                </div>
+
+                <div class="project-details" aria-live="polite">
+                    <article class="project-detail" id="project-biomusic" data-project="biomusic" hidden>
+                        <div class="detail-heading"><div><p class="project-category">UBC ELECTRICAL & COMPUTER ENGINEERING CAPSTONE · 2026–27</p><h3>Wireless Epidermal Biosensing for Biomusic</h3></div><button class="close-detail" type="button" aria-label="Close project details">×</button></div>
+                        <div class="biomusic-media"><figure class="biomusic-brand"><img src="images/biomusic_logo.png" alt="Biomusic logo" loading="eager"><figcaption>Biomusic</figcaption></figure><figure class="biomusic-system"><figcaption>Wireless sensing system overview</figcaption><img src="images/biomusic-simple.png" alt="System diagram showing test data sent by USB to the MCU, which packages sensor inputs and transmits them over Bluetooth Low Energy to an application" loading="eager"></figure></div>
+                        <div class="detail-grid"><div><p class="detail-lead">An assistive technology project exploring how physiological signals can become music.</p><p>Biomusic aims to help caregivers and clinicians better understand the internal states of people who may not communicate verbally. Our capstone team is adapting a thin, skin-conformal epidermal patch as a comfortable, low-power sensing front end that streams physiological data to a mobile app in real time.</p><p><strong>My contribution · Hardware & Firmware</strong><br>I’m developing embedded firmware for the Nordic nRF5340, a dual-core Arm Cortex-M4 SoC. On its application core, FreeRTOS organizes sensor acquisition, data packaging, and Bluetooth Low Energy communication as concurrent real-time tasks. Our current milestone is a proof-of-concept BLE connection between the MCU and a mock mobile app.</p><ul class="detail-list"><li>Epidermal patch captures physiological signals</li><li>nRF5340 manages the BLE stack and packages sensor data</li><li>Mobile app receives the stream for processing into Biomusic</li></ul></div><div class="detail-aside"><h4>Technologies</h4><p>FreeRTOS · Nordic nRF5340 · Arm Cortex-M4 · Bluetooth Low Energy · C · Embedded firmware · Multicore SoC · Biosignal acquisition</p></div></div>
+                    </article>
+                    <article class="project-detail" id="project-autocar" data-project="autocar" hidden>
+                        <div class="detail-heading"><div><p class="project-category">AUTONOMOUS ROBOTICS · TEAM A2</p><h3>Autonomous Driving, Parking & Sign Recognition</h3></div><button class="close-detail" type="button" aria-label="Close project details">×</button></div>
+                        <div class="car-media-grid"><div class="demo-player car-demo-player"><div class="demo-label"><span class="status-dot"></span><span id="car-demo-title">Obstacle avoidance demo</span></div><div class="demo-selectors" role="group" aria-label="Choose an autonomous car demo"><button type="button" class="demo-selector is-active" data-car-demo data-demo-title="Obstacle avoidance demo" data-demo-src="additional/obstacle_avoidance.mp4" aria-pressed="true">Obstacle avoidance</button><button type="button" class="demo-selector" data-car-demo data-demo-title="Parallel parking demo" data-demo-src="additional/parallel.MP4" aria-pressed="false">Parallel parking</button><button type="button" class="demo-selector" data-car-demo data-demo-title="Reverse parking demo" data-demo-src="additional/reverse_parking.mp4" aria-pressed="false">Reverse parking</button></div><video id="car-demo-video" controls playsinline preload="metadata" poster="images/car_image_visual.jpg"><source src="additional/obstacle_avoidance.mp4" type="video/mp4">Your browser does not support embedded video. You can <a href="additional/obstacle_avoidance.mp4">open the video file</a> instead.</video></div><figure class="car-detail-photo"><img src="images/car_image_visual.jpg" alt="The autonomous car used for the driving and parking competition" loading="eager"><figcaption>Competition car · Team A2</figcaption></figure></div>
+                        <div class="detail-grid"><div><p class="detail-lead">A small scale autonomous car that can navigate, react to obstacles, read parking signs, and park.</p><p>The ROS 2 system combines track-following planners with a safety layer that can reduce speed, plus a state machine coordinating parking-spot search, sign checks, parking, and exit maneuvers. The perception stack uses camera and depth data, LiDAR, and parking-sign recognition.</p><p><strong>Competition result</strong><br>Against 15 groups, our car was the fastest on both the obstacle course and the straight course, and achieved the most functional parking performance.</p><ul class="detail-list"><li>ROS 2 planners for wall following and gap following</li><li>Obstacle-aware braking and drive control</li><li>LiDAR parking-spot detection and maneuvering</li><li>Parking-sign detection and interpretation</li></ul></div><div class="detail-aside"><h4>Technologies</h4><p>ROS 2 · Python · OpenCV · YOLOv8 · TensorRT · LiDAR · Depth camera · Ackermann steering</p></div></div>
+                    </article>
+                    <article class="project-detail" id="project-os161" data-project="os161" hidden>
+                        <div class="detail-heading"><div><p class="project-category">OPERATING SYSTEMS</p><h3>OS161 Operating System</h3></div><button class="close-detail" type="button" aria-label="Close project details">×</button></div>
+                        <div class="detail-grid"><div><p class="detail-lead">Core kernel subsystems for a multi-process educational operating system.</p><p>Developed the foundations that move OS161 from a limited single-tasking kernel toward a robust system with process abstractions and virtual memory.</p><ul class="detail-list"><li>Blocking locks and condition variables</li><li>File I/O system calls through the VFS</li><li><code>fork()</code> and <code>execv()</code> process support</li><li>TLB fault handling and demand-paged memory</li></ul></div><div class="detail-aside"><h4>Focus areas</h4><p>Kernel C · Concurrency · GDB · Memory management · System calls</p></div></div>
+                    </article>
+                    <article class="project-detail" id="project-arc4" data-project="arc4" hidden>
+                        <div class="detail-heading"><div><p class="project-category">DIGITAL DESIGN · SYSTEMVERILOG</p><h3>ARC4 Decryptor & Parallel Cracker</h3></div><button class="close-detail" type="button" aria-label="Close project details">×</button></div>
+                        <div class="demo-player"><div class="demo-label"><span class="status-dot"></span> Project demonstration</div><video controls playsinline preload="metadata" poster="images/ModelSim_arc4.jpg"><source src="videos/decrypt.mp4" type="video/mp4">Your browser does not support embedded video. You can <a href="videos/decrypt.mp4">open the video file</a> instead.</video></div>
+                        <div class="detail-grid"><div><p class="detail-lead">A complete ARC4 stream cipher system designed in SystemVerilog and implemented on FPGA.</p><p>The design handles state initialization, key scheduling, decryption, and brute-force key cracking. I split the search across decryption cores for near-2× speedup, then validated the system with RTL testbenches and on hardware.</p><ul class="detail-list"><li>On-chip SRAM and ready-enable protocol</li><li>ASCII validation for candidate plaintext</li><li>Parallel key-space search and verification</li></ul></div><div class="detail-aside"><h4>Built with</h4><p>SystemVerilog · FPGA · SRAM · RTL testbenches · Python</p></div></div>
+                    </article>
+                    <article class="project-detail" id="project-firefighter" data-project="firefighter" hidden>
+                        <div class="detail-heading"><div><p class="project-category">ROBOTICS · EMBEDDED</p><h3>Autonomous Firefighter Robot</h3></div><button class="close-detail" type="button" aria-label="Close project details">×</button></div>
+                        <div class="detail-grid"><div><p class="detail-lead">A robot that can navigate a maze, find an open flame, and put it out.</p><p>Combined sensor-based navigation, real-time decisions, and environmental feedback. The robot was the only one to successfully complete both challenge mazes.</p><ul class="detail-list"><li>Maze navigation with dual ultrasonic sensors</li><li>Infrared flame detection and localization</li><li>Onboard fan for fire suppression</li><li>Live sensor readout on an LCD</li></ul></div><div class="detail-aside"><h4>Built with</h4><p>Embedded robotics · Ultrasonic sensors · Infrared flame sensor · LCD</p></div></div>
+                    </article>
+                    <article class="project-detail" id="project-sumo" data-project="sumo" hidden>
+                        <div class="detail-heading"><div><p class="project-category">ROBOTICS · CONTROL</p><h3>Autonomous Sumo-Bot</h3></div><button class="close-detail" type="button" aria-label="Close project details">×</button></div>
+                        <div class="demo-player"><div class="demo-label"><span class="status-dot"></span> Sumo-Bot demonstration</div><video controls playsinline preload="metadata"><source src="additional/sumo_robot.mp4" type="video/mp4">Your browser cannot play this video. You can <a href="additional/sumo_robot.mov">open the original MOV file</a> instead.</video></div>
+                        <div class="detail-grid"><div><p class="detail-lead">A fully autonomous robot built to find an opponent and push it out of the ring.</p><p>Infrared sensing locates competitors while phototransistors detect the ring edge, giving the robot an aggressive but controlled strategy.</p><ul class="detail-list"><li>Opponent detection with infrared sensors</li><li>Ring-edge detection with phototransistors</li><li>Wedge design and closed-loop motor control</li><li>Hand-built and soldered circuitry</li></ul></div><div class="detail-aside"><h4>Built with</h4><p>BASIC · Infrared sensors · Phototransistors · DC motors · Custom circuits</p></div></div>
+                    </article>
+                    <article class="project-detail" id="project-shell" data-project="shell" hidden>
+                        <div class="detail-heading"><div><p class="project-category">C · UNIX SYSTEMS</p><h3>UNIX Shell Implementation</h3></div><button class="close-detail" type="button" aria-label="Close project details">×</button></div>
+                        <div class="demo-player"><div class="demo-label"><span class="status-dot"></span> Project demonstration</div><video controls playsinline preload="metadata" poster="images/crash_shell.jpg"><source src="videos/crash_demo.mp4" type="video/mp4">Your browser does not support embedded video. You can <a href="videos/crash_demo.mp4">open the video file</a> instead.</video></div>
+                        <div class="detail-grid"><div><p class="detail-lead">A UNIX-like shell in C with process control and signal-safe job management.</p><p>The shell follows UNIX semantics for process groups and job lifecycles, with support for foreground and background execution.</p><ul class="detail-list"><li>Sequential and background command execution</li><li>Job tracking plus <code>jobs</code>, <code>fg</code>, and <code>bg</code></li><li>PATH-based execution through <code>fork</code> and <code>execvp</code></li><li>Signal handling for <code>SIGCHLD</code>, <code>SIGINT</code>, and <code>SIGTSTP</code></li></ul></div><div class="detail-aside"><h4>Built with</h4><p>C · GCC · UNIX system calls · POSIX signals · Process groups</p></div></div>
+                    </article>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="project-detail" id="detail-4">
-            <div class="project-detail-header">
-                <h3>Sumo-Bot Autonomous Robot</h3>
-                <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
-            </div>
-            <div class="project-detail-content">
-                <div>
-                    <p><strong>Project Overview:</strong></p>
-                    <p>
-                    Designed and built a fully autonomous sumo robot capable of detecting, charging, and pushing an opponent out of a competition ring. The robot uses infrared sensing to locate other robots and a phototransistor-based edge detection system to avoid exiting the ring, enabling aggressive yet controlled behavior.
-                    </p>
-
-                    <p><strong>Key Features:</strong></p>
-                    <ul style="margin-left: 1.5rem;">
-                        <li>Autonomous opponent detection using infrared sensors</li>
-                        <li>Edge detection using phototransistors to prevent self-exit</li>
-                        <li>Wedge/plow mechanical design for effective pushing</li>
-                        <li>Closed-loop motor control for rapid engagement</li>
-                        <li>Custom hand-built and soldered circuitry</li>
-                    </ul>
-                </div>
-
-                <div class="project-tech-stack">
-                    <h4>Technology Stack</h4>
-                    <ul class="tech-list">
-                        <li>BASIC programming language</li>
-                        <li>Infrared sensors & phototransistors</li>
-                        <li>DC motors & motor drivers</li>
-                        <li>Custom circuit design & soldering</li>
-                        <li>Autonomous robotics control</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-detail" id="detail-5">
-            <div class="project-detail-header">
-                <h3>UNIX Shell Implementation</h3>
-                <button class="close-btn" onclick="closeDetail()">Back to Projects</button>
-            </div>
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <a href="videos/crash_demo.mp4" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0c4121; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.3s;">Watch Demo Video →</a>
-            </div>
-            <div class="project-detail-content">
-                <div>
-                    <p><strong>Project Overview:</strong></p>
-                    <p>
-                        Implemented a simplified UNIX shell in C, supporting process creation, job control, and
-                        foreground/background execution. The shell closely follows UNIX semantics for signal handling,
-                        process groups, and job lifecycle management, and was developed incrementally across multiple
-                        milestones.
-                    </p>
-
-                <p><strong>Key Features:</strong></p>
-                <ul style="margin-left: 1.5rem;">
-                    <li>Command parsing with sequential (<code>;</code>) and background (<code>&</code>) execution</li>
-                    <li>Foreground and background job control with job IDs and PID tracking</li>
-                    <li>Built-in shell commands: <code>jobs</code>, <code>fg</code>, <code>bg</code>, <code>nuke</code>, and <code>quit</code></li>
-                    <li>PATH-based program execution using <code>fork</code> and <code>execvp</code></li>
-                    <li>Accurate job state tracking (running, suspended, finished, killed)</li>
-                    <li>Signal-safe handling of asynchronous events via <code>SIGCHLD</code>, <code>SIGINT</code>, <code>SIGTSTP</code>, and <code>SIGQUIT</code></li>
-                </ul>
-            </div>
-
-            <div class="project-tech-stack">
-                <h4>Technology Stack</h4>
-                <ul class="tech-list">
-                    <li>C (GCC)</li>
-                    <li>UNIX/Linux System Calls</li>
-                    <li>fork / execvp / waitpid</li>
-                    <li>POSIX Signals & Process Groups</li>
-                    <li>Signal-safe Concurrency Design</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <section id="contact" class="contact">
-        <h2>Get In Touch</h2>
-        <p>I'm always open to new opportunities and collaborations.</p>
-        <div class="contact-links">
-            <a href="mailto:smacg04@gmail.com">Email</a>
-            <a href="https://github.com/sarahmacgillivray" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/sarahmacgillivraylinked" target="_blank">LinkedIn</a>
-            <a href="./additional/SarahMacGillivray_Resume_November_2026.pdf" target="_blank">Resume</a>
-        </div>
-    </section>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Toggle project details
-        function toggleDetail(index) {
-            // Hide all project details
-            document.querySelectorAll('.project-detail').forEach(detail => {
-                detail.classList.remove('active');
-            });
-            
-            // Show the selected project detail
-            const detailElement = document.getElementById(`detail-${index}`);
-            if (detailElement) {
-                detailElement.classList.add('active');
-                // Scroll to the detail section with offset for nav bar
-                setTimeout(() => {
-                    const yOffset = -120; // Adjust this value to control spacing from top
-                    const y = detailElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                    window.scrollTo({top: y, behavior: 'smooth'});
-                }, 0);
-            }
-        }
-
-        // Close project detail
-        function closeDetail() {
-            // Hide all project details
-            document.querySelectorAll('.project-detail').forEach(detail => {
-                detail.classList.remove('active');
-            });
-            
-            // Scroll back to projects section
-            const projectsSection = document.getElementById('projects');
-            if (projectsSection) {
-                projectsSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-    </script>
+        <section class="contact section-wrap" id="contact" aria-labelledby="contact-title">
+            <div class="contact-copy"><p class="eyebrow">Contact</p><h2 id="contact-title">Have a good<br><span>problem to solve?</span></h2><p>I’m open to new opportunities and collaborations.</p></div>
+            <div class="contact-links"><a href="mailto:smacg04@gmail.com">Email <span aria-hidden="true">↗</span></a><a href="https://github.com/sarahmacgillivray" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/sarahmacgillivraylinked" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="./additional/Sarah_MacGillivray_Resume_September26.pdf" target="_blank" rel="noreferrer">Resume <span aria-hidden="true">↗</span></a></div>
+        </section>
+    </main>
+    <footer class="site-footer"><a class="wordmark" href="#home">SM<span>.</span></a><p>Designed and built by Sarah MacGillivray</p><a href="#home">Back to top ↑</a></footer>
 </body>
 </html>
