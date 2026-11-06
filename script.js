@@ -192,6 +192,68 @@ if (trailRoute && trailMap) {
     revealTrail();
 }
 
+const heroRidge = document.querySelector(".hero");
+const ridgeLines = document.querySelectorAll(".hero-ridge-line");
+
+if (heroRidge && ridgeLines.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let awayFromHero = false;
+    let lastScrollY = window.scrollY;
+
+    const drawRidge = () => {
+        ridgeLines.forEach((line) => {
+            line.classList.remove("is-drawing");
+            line.style.animation = "none";
+        });
+        requestAnimationFrame(() => {
+            ridgeLines.forEach((line) => {
+                line.style.animation = "";
+                line.classList.add("is-drawing");
+            });
+        });
+    };
+
+    const watchRidge = () => {
+        const scrollY = window.scrollY;
+        const scrollingUp = scrollY < lastScrollY - 4;
+        lastScrollY = scrollY;
+        const bounds = heroRidge.getBoundingClientRect();
+        if (bounds.bottom < 48) awayFromHero = true;
+        const heroIsHome = bounds.top < window.innerHeight * 0.4 && bounds.bottom > window.innerHeight * 0.55;
+        if (scrollingUp && awayFromHero && heroIsHome) {
+            awayFromHero = false;
+            drawRidge();
+        }
+    };
+
+    drawRidge();
+    window.addEventListener("scroll", watchRidge, { passive: true });
+}
+
+const coopScatter = document.querySelector(".coop-scatter");
+const coopRoute = document.getElementById("coop-route");
+const coopDot = document.querySelector(".journey-dot");
+
+if (coopScatter && coopRoute && coopDot && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const routeLength = coopRoute.getTotalLength();
+    coopRoute.style.strokeDasharray = String(routeLength);
+
+    const placeCoopDot = () => {
+        const bounds = coopScatter.getBoundingClientRect();
+        const view = window.innerHeight;
+        const start = view * 0.86;
+        const range = Math.max(bounds.height * 0.95, 1);
+        const progress = Math.min(1, Math.max(0, (start - bounds.top) / range));
+        const point = coopRoute.getPointAtLength(routeLength * progress);
+        coopDot.setAttribute("cx", point.x);
+        coopDot.setAttribute("cy", point.y);
+        coopRoute.style.strokeDashoffset = String(routeLength * (1 - progress));
+    };
+
+    placeCoopDot();
+    window.addEventListener("scroll", placeCoopDot, { passive: true });
+    window.addEventListener("resize", placeCoopDot);
+}
+
 const siteHeader = document.querySelector(".site-header");
 if (siteHeader) {
     const syncHeader = () => siteHeader.classList.toggle("is-scrolled", window.scrollY > 28);
