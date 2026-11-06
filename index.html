@@ -8,8 +8,8 @@
     <title>Staying Curious | Sarah MacGillivray</title>
     <link rel="stylesheet" href="styles.css?v=5">
     <link rel="stylesheet" href="field-notes.css?v=6">
-    <link rel="stylesheet" href="editorial.css?v=35">
-    <script src="script.js?v=13" defer></script>
+    <link rel="stylesheet" href="editorial.css?v=43">
+    <script src="script.js?v=17" defer></script>
 </head>
 <body>
     <header class="site-header">
@@ -70,16 +70,25 @@
                     <figcaption><span>Also</span><em>Co-captain, XC</em></figcaption>
                 </figure>
             </div>
+            <p class="about-tools"><span>On the desk</span> C / C++ · Python · FastAPI · FreeRTOS · ROS 2 · Altium · SPI · SystemVerilog · FPGA · ARM · Git</p>
+            <dialog class="scrapbook-viewer" aria-labelledby="scrapbook-viewer-title">
+                <button class="scrapbook-viewer-close" type="button" aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button>
+                <figure class="scrapbook-viewer-print">
+                    <img class="scrapbook-viewer-image" src="" alt="">
+                    <figcaption><p class="eyebrow">PHOTO ALBUM</p><h3 id="scrapbook-viewer-title"></h3><p class="scrapbook-viewer-story"></p></figcaption>
+                </figure>
+            </dialog>
+        </section>
+
+        <section class="coop-section section-wrap" id="work" aria-labelledby="coop-title">
             <header class="coop-head">
                 <p class="about-kicker">The jobs</p>
-                <h3>Co-op</h3>
+                <h2 id="coop-title">Co-op</h2>
             </header>
             <div class="coop-scatter">
                 <svg class="journey" viewBox="0 0 1000 780" preserveAspectRatio="none" aria-hidden="true">
-                    <path class="journey-line" pathLength="1" d="M 290 120 C 450 70 600 80 730 140 C 760 200 620 250 470 300 C 320 350 280 440 310 510 C 350 590 520 660 720 560 C 800 510 640 720 500 750" />
-                    <circle class="journey-dot" r="7" fill="#7c3f2e">
-                        <animateMotion dur="9s" repeatCount="indefinite" path="M 290 120 C 450 70 600 80 730 140 C 760 200 620 250 470 300 C 320 350 280 440 310 510 C 350 590 520 660 720 560 C 800 510 640 720 500 750" />
-                    </circle>
+                    <path id="coop-route" class="journey-line" d="M 280 160 C 420 90 620 90 700 170 C 780 250 560 300 460 380 C 360 460 250 520 300 600 C 350 680 450 730 530 750" />
+                    <circle class="journey-dot" r="6" cx="280" cy="160" fill="#7c3f2e"></circle>
                 </svg>
                 <article class="coop coop-telus">
                     <p class="coop-when">May – Aug 2026</p>
@@ -106,27 +115,6 @@
                     <p>Semiconductor images at 4&nbsp;nm, including the Apple A16, and machine learning that shortened the correction and transistor-extraction pass.</p>
                 </article>
             </div>
-            <div class="about-close">
-                <figure class="scrapbook-photo scrap scrap-ridge scrapbook-coquihalla">
-                    <button class="scrapbook-trigger" type="button" data-scrapbook-photo data-photo-title="Coquihalla / British Columbia" data-photo-story="A day hiking above the clouds in the Coquihalla mountains." aria-label="View larger photo: hiking in the Coquihalla mountains">
-                        <img src="images/coquihalla.jpg" alt="Sarah hiking a rocky ridgeline in the Coquihalla mountains" loading="lazy">
-                    </button>
-                    <figcaption><span>After the work</span><em>Coquihalla</em></figcaption>
-                </figure>
-                <div class="about-close-copy">
-                    <p class="about-kicker">Outside the lab</p>
-                    <h3>Above the clouds</h3>
-                    <p>I'm just as happy working on a new project as I am spending a weekend in the mountains. Running, hiking, skiing, and exploring new places are a big part of my life outside engineering.</p>
-                </div>
-            </div>
-            <p class="about-tools"><span>On the desk</span> C / C++ · Python · FastAPI · FreeRTOS · ROS 2 · Altium · SPI · SystemVerilog · FPGA · ARM · Git</p>
-            <dialog class="scrapbook-viewer" aria-labelledby="scrapbook-viewer-title">
-                <button class="scrapbook-viewer-close" type="button" aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button>
-                <figure class="scrapbook-viewer-print">
-                    <img class="scrapbook-viewer-image" src="" alt="">
-                    <figcaption><p class="eyebrow">PHOTO ALBUM</p><h3 id="scrapbook-viewer-title"></h3><p class="scrapbook-viewer-story"></p></figcaption>
-                </figure>
-            </dialog>
         </section>
 
         <section class="projects-section" id="explore" aria-labelledby="projects-title">
@@ -230,6 +218,22 @@
                         <div class="demo-player"><div class="demo-label"><span class="status-dot"></span> Project demonstration</div><video controls playsinline preload="metadata" poster="images/crash_shell.jpg"><source src="videos/crash_demo.mp4" type="video/mp4">Your browser does not support embedded video. You can <a href="videos/crash_demo.mp4">open the video file</a> instead.</video></div>
                         <div class="detail-grid"><div><p class="detail-lead">A UNIX-like shell in C with process control and signal-safe job management.</p><p>The shell follows UNIX semantics for process groups and job lifecycles, with support for foreground and background execution.</p><ul class="detail-list"><li>Sequential and background command execution</li><li>Job tracking plus <code>jobs</code>, <code>fg</code>, and <code>bg</code></li><li>PATH-based execution through <code>fork</code> and <code>execvp</code></li><li>Signal handling for <code>SIGCHLD</code>, <code>SIGINT</code>, and <code>SIGTSTP</code></li></ul></div><div class="detail-aside"><h4>Built with</h4><p>C · GCC · UNIX system calls · POSIX signals · Process groups</p></div></div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="outdoors section-wrap" id="outdoors" aria-labelledby="outdoors-title">
+            <div class="about-close">
+                <figure class="scrapbook-photo scrap scrap-ridge scrapbook-coquihalla">
+                    <button class="scrapbook-trigger" type="button" data-scrapbook-photo data-photo-title="Coquihalla / British Columbia" data-photo-story="A day hiking above the clouds in the Coquihalla mountains." aria-label="View larger photo: hiking in the Coquihalla mountains">
+                        <img src="images/coquihalla.jpg" alt="Sarah hiking a rocky ridgeline in the Coquihalla mountains" loading="lazy">
+                    </button>
+                    <figcaption><span>After the work</span><em>Coquihalla</em></figcaption>
+                </figure>
+                <div class="about-close-copy">
+                    <p class="about-kicker">Outside the lab</p>
+                    <h2 id="outdoors-title">Above the clouds</h2>
+                    <p>I'm just as happy working on a new project as I am spending a weekend in the mountains. Running, hiking, skiing, and exploring new places are a big part of my life outside engineering.</p>
                 </div>
             </div>
         </section>
