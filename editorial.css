@@ -143,37 +143,31 @@ button:focus-visible, a:focus-visible { outline-color: #1d5560; }
 .projects-section::before, .projects-section::after { display: none; }
 .projects-heading { align-items: end; }
 .projects-heading .section-heading h2 { font-weight: 400; }
-.map-frame { border-color: #7d927e; box-shadow: none; }
-.map-topline, .map-bottomline { font-size: .54rem; letter-spacing: .09em; }
+.map-frame { border-color: #cfc4b2; background: #f3eee6; box-shadow: none; }
+.map-topline, .map-bottomline { color: #5c564e; font-weight: 500; letter-spacing: .14em; }
+.trail-map { background: #e6dfd2; }
 .contour-lines { animation: none; }
-.route-underlay { stroke-width: 14px; }
-.route-trail { stroke-width: 4px; }
-.map-marker { width: 112px; min-height: 68px; }
-.marker-glyph { width: 40px; height: 40px; padding: 6px; display: grid; place-items: center; border: 1px solid #fff9e9; border-radius: 50%; color: var(--marker-color, #b9573e); background: #f7f3e7; box-shadow: 0 2px 5px rgb(38 54 38 / 26%); font-size: 0; transform: none; transition: background .2s, color .2s, transform .2s; }
-.marker-glyph svg { display: block; width: 100%; height: 100%; overflow: visible; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
-.marker-glyph svg .solid { fill: currentColor; stroke: none; }
-.marker-glyph svg .paper { fill: #f7f3e7; stroke: none; }
-.map-marker:hover .marker-glyph, .map-marker:focus-visible .marker-glyph, .map-marker[aria-expanded="true"] .marker-glyph { color: #fff8df; background: #294d37; box-shadow: 0 0 0 4px rgb(198 101 69 / 20%); transform: translateY(-2px); }
-.marker-biomusic { --marker-color: #517d61; }
-.marker-autocar { --marker-color: #ad5136; }
-.marker-os161 { --marker-color: #536f8b; }
-.marker-arc4 { --marker-color: #a37a3f; }
-.marker-firefighter { --marker-color: #b75236; }
-.marker-sumo { --marker-color: #61745a; }
-.marker-shell { --marker-color: #776754; }
-.marker-name { padding: 2px 5px; border-color: rgb(53 88 64 / 35%); background: #f4f1e6; font-size: .49rem; }
-.destination-index button { grid-template-columns: 23px 25px minmax(0, 1fr) 15px; gap: 7px; }
+.map-landmarks text { font-weight: 500; letter-spacing: .16em; stroke: #e6dfd2; }
+.route-underlay { stroke: #f7f3ea; stroke-width: 7px; opacity: .75; }
+.route-trail { stroke: #7c3f2e; stroke-width: 1.6px; stroke-dasharray: 1; filter: none; }
+.map-marker { width: 96px; min-height: 58px; }
+.marker-glyph { width: 26px; height: 26px; padding: 0; display: grid; place-items: center; border: 1px solid #3e5346; border-radius: 50%; color: #24382c; background: #f6f1e8; box-shadow: none; font: 500 .58rem/1 var(--display); letter-spacing: .02em; transform: none; transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease; }
+.marker-glyph svg { display: none; }
+.map-marker:hover .marker-glyph, .map-marker:focus-visible .marker-glyph, .map-marker[aria-expanded="true"] .marker-glyph { color: #f6f1e8; background: #2c4636; border-color: #2c4636; box-shadow: 0 0 0 4px rgb(124 63 46 / 16%); transform: translateY(-2px); }
+.marker-name { padding: 3px 0 0; border: 0; background: transparent; color: #3f4a40; font: 500 .46rem/1.25 var(--body); letter-spacing: .11em; }
+.destination-art { display: none; }
+.destination-index button { grid-template-columns: 26px minmax(0, 1fr) 14px; gap: 8px; }
+.destination-number { color: #7c3f2e; font-family: var(--display); font-weight: 400; font-size: .72rem; letter-spacing: .04em; }
+.destination-index strong { font-family: var(--display); font-weight: 400; font-size: .92rem; letter-spacing: .01em; }
+.destination-index small { letter-spacing: .04em; }
+.destination-index button.is-active { background: rgb(244 239 230 / 70%); }
+.destination-index button.is-active .destination-number { color: #2c4636; }
+.field-note-panel { box-shadow: none; border-color: #d2c8b8; border-top: 1px solid #c4b39a; background: #faf6ef; }
+.field-note-empty { background: repeating-linear-gradient(0deg, transparent 0 31px, rgb(92 86 78 / 6%) 32px); }
+.empty-compass { border-color: #c4b39a; color: transparent; font-size: 0; }
+.empty-compass::before { content: "N"; color: #7c3f2e; font: 500 .68rem/1 var(--body); letter-spacing: .08em; }
 .destination-index button:nth-child(odd) { margin-right: 12px; }
 .destination-index button:nth-child(even) { padding-left: 12px; }
-.destination-art { width: 23px; height: 23px; display: grid; place-items: center; color: #526b55; }
-.destination-art svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.55; }
-.destination-art svg .solid { fill: currentColor; stroke: none; }
-.destination-number { padding-top: 1px; font-size: .57rem; }
-.destination-index strong { font-size: .75rem; }
-.destination-index small { font-size: .59rem; }
-.destination-index button.is-active .destination-art { color: var(--clay); }
-.field-note-panel { box-shadow: none; background: #faf9f2; }
-.field-note-empty { background: repeating-linear-gradient(0deg, transparent 0 31px, rgb(86 108 85 / 7%) 32px); }
 .field-note-panel .project-detail { box-shadow: none; }
 .field-note-panel .field-photograph { margin: 15px 0 0; padding: 8px 8px 0; background: #f0eee3; }
 .field-note-panel .field-photograph img { display: block; width: 100%; max-height: 150px; aspect-ratio: 2 / 1; object-fit: cover; object-position: center 45%; }
@@ -234,10 +228,9 @@ button:focus-visible, a:focus-visible { outline-color: #1d5560; }
     .about-close { grid-template-columns: 1fr; gap: 16px; margin-top: 28px; }
     .about .scrap-ridge { width: 100%; height: 220px; margin: 0; transform: none; }
     .about-tools { margin: 28px 0 0; }
-    .destination-index button { grid-template-columns: 20px 22px minmax(0, 1fr) 12px; gap: 5px; }
+    .destination-index button { grid-template-columns: 22px minmax(0, 1fr) 12px; gap: 6px; }
     .destination-index button:nth-child(odd) { margin-right: 6px; }
     .destination-index button:nth-child(even) { padding-left: 7px; }
-    .destination-art { width: 20px; height: 20px; }
 }
 @media (max-width: 480px) {
     .hero { padding-inline: 18px; }
